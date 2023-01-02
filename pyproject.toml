@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heatphase"
+version = "0.1.0"
+description = "A two-dimensional heat conduction solver for thermo-optic phase shifters in Rust: finite volumes, banded Cholesky and conjugate gradients, step response, phase-shift efficiency and thermal crosstalk, with a library of cross-sections each checked against an independent calculation."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Amir Masominia" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "matplotlib>=3.7", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+heatphase = "heatphase.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/*/pipeline.py" = ["E501"]  # report text
+"src/*/studies.py" = ["E501"]
+"src/*/reference.py" = ["E501"]
+"scripts/*.py" = ["E501"]
+"tests/*.py" = ["E501"]
