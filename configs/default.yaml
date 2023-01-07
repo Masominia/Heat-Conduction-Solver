@@ -1,0 +1,19 @@
+# Where the cross-section library lives and how the report groups it.
+cases_dir: cases
+fast_every: 9            # in fast mode only every n-th cross-section is solved
+fast_families: [pitch_box2, shifter_box, shifter_standard, transient_box, transient_standard, mesh_, line_d2, solver_cg_standard]   # always solved: the studies need them
+
+families:
+  layered stacks: [stack_]
+  line heater: [line_]
+  phase shifter: [shifter_]
+  crosstalk: [pitch_]
+  trenches and undercut: [trench_]
+  arrays: [array_]
+  top surface: [top_]
+  step response: [transient_]
+  mesh and solver: [mesh_, solver_, window_]
+  metal: [metal_]
+
+# Cross-sections shown in the overview figure.
+gallery: [shifter_standard, pitch_box2_p06, trench_both, trench_undercut, array_ramp, metal_plane]
