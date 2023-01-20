@@ -1,0 +1,17 @@
+[package]
+name = "heatphase"
+version = "0.1.0"
+edition = "2021"
+description = "Heat conduction in chip cross-sections for thermo-optic phase shifters"
+license = "MIT"
+
+[lib]
+name = "heatphase"
+path = "src/lib.rs"
+
+[[bin]]
+name = "heatphase"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
