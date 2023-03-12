@@ -1,0 +1,85 @@
+{
+ "case": "metal_via",
+ "title": "Aluminium via from the neighbour side to the substrate",
+ "notes": [
+  "A thermal via: metal connecting the cladding to the substrate between two shifters shunts the crosstalk to the sink.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 39.0441854576,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 156.303883 1e-7",
+   "status": "PASS",
+   "detail": "156.30388257, expected 156.30388300, relative error -2.73e-9"
+  },
+  {
+   "check": "response wg2 h1 2.24087451 1e-7",
+   "status": "PASS",
+   "detail": "2.24087451, expected 2.24087451, relative error 4.84e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 26.6574739 1e-7",
+   "status": "PASS",
+   "detail": "26.65747388, expected 26.65747390, relative error -8.40e-10"
+  },
+  {
+   "check": "peak 39.0441855 1e-7",
+   "status": "PASS",
+   "detail": "39.04418546, expected 39.04418550, relative error -1.09e-9"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.10e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 15.63038825734,
+  "wg2": 0.2240874511086
+ },
+ "response": {
+  "wg1": {
+   "h1": 156.3038825734
+  },
+  "wg2": {
+   "h1": 2.240874511086
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 26.657473878
+  },
+  "wg2": {
+   "h1": 1859.393128
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.6666664002660502e-13,
+  "temperature": 1.667161842121064e-13,
+  "time": 0.0,
+  "peak": 1.0564186530593534e-12,
+  "balance": 0.0,
+  "outflow": 2.842170943040401e-16,
+  "field": 1.2789507382228325e-07
+ }
+}
