@@ -1,0 +1,73 @@
+{
+ "case": "window_w100",
+ "title": "Standard shifter in a 100 um wide window",
+ "notes": [
+  "The side walls are adiabatic: a window that is too narrow traps heat.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy. The pipeline compares the response with the 60 um window."
+ ],
+ "metrics": {
+  "nx": 400.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -50.0,
+  "y0": -10.0,
+  "peak": 41.4477309034,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.845606 1e-7",
+   "status": "PASS",
+   "detail": "171.84560616, expected 171.84560600, relative error 9.19e-10"
+  },
+  {
+   "check": "pi_power wg h 24.2465709 1e-7",
+   "status": "PASS",
+   "detail": "24.24657086, expected 24.24657090, relative error -1.66e-9"
+  },
+  {
+   "check": "peak 41.4477309 1e-7",
+   "status": "PASS",
+   "detail": "41.44773090, expected 41.44773090, relative error 8.31e-11"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 3.86e-14"
+  },
+  {
+   "check": "cells 24000",
+   "status": "PASS",
+   "detail": "24000 cells (400 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.1845606158
+ },
+ "response": {
+  "wg": {
+   "h": 171.845606158
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.24657086
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.6506017608310782e-13,
+  "temperature": 1.6497748060410829e-13,
+  "time": 0.0,
+  "peak": 1.0397292200203459e-12,
+  "balance": 0.0,
+  "outflow": 3.9790393202565614e-15,
+  "field": 1.2037033012865715e-07
+ }
+}
