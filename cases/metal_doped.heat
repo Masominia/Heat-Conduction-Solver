@@ -1,0 +1,19 @@
+# Heating in the silicon layer itself, 1 um to each side of the core: no cladding in between.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Doped silicon heater in the waveguide layer
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect si 1 2 2 2.25
+rect si -2 -1 2 2.25
+heater right xmin=1 xmax=2 ymin=2 ymax=2.25 power=0.05
+heater left xmin=-2 xmax=-1 ymin=2 ymax=2.25 power=0.05
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+expect response wg right 147.765788 1e-7
+expect response wg left 147.765788 1e-7
+expect temperature wg 14.7765788 1e-7
+expect peak 19.9807743 1e-7
+expect balance 1e-9
+expect cells 14400
