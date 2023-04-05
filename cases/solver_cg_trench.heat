@@ -1,0 +1,22 @@
+# The same system solved by preconditioned conjugate gradients, not by factorisation.
+# Reference: the sparse direct solution; the two solvers must agree to 1e-7.
+title Conjugate gradients: trench
+grid dx=0.25 dy=0.25
+window width=80 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h1 xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg1 xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+rect si 9.75 10.25 2 2.25
+probe wg2 xmin=9.75 xmax=10.25 ymin=2 ymax=2.25
+rect air 4 6 0 5
+rect air -6 -4 0 5
+solver cg
+expect response wg1 h1 218.66935 1e-7
+expect response wg2 h1 2.29613433 1e-7
+expect pi_power wg1 h1 19.0546443 1e-7
+expect peak 48.7815789 1e-7
+expect balance 1e-9
+expect cells 19200
