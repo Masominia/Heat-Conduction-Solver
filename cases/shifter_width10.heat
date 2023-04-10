@@ -1,0 +1,16 @@
+# A wider heater spreads the same power over more oxide: the waveguide sees less of it.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Heater 10 um wide
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -5 5 4 4.25
+heater h xmin=-5 xmax=5 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+expect response wg h 109.533756 1e-7
+expect pi_power wg h 38.0400236 1e-7
+expect peak 21.0057074 1e-7
+expect balance 1e-9
+expect cells 14400
