@@ -1,0 +1,73 @@
+{
+ "case": "shifter_width06",
+ "title": "Heater 6 um wide",
+ "notes": [
+  "A wider heater spreads the same power over more oxide: the waveguide sees less of it.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 27.5804993949,
+  "peak_x": 0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 137.766638 1e-7",
+   "status": "PASS",
+   "detail": "137.76663786, expected 137.76663800, relative error -1.03e-9"
+  },
+  {
+   "check": "pi_power wg h 30.2443809 1e-7",
+   "status": "PASS",
+   "detail": "30.24438087, expected 30.24438090, relative error -9.65e-10"
+  },
+  {
+   "check": "peak 27.5804994 1e-7",
+   "status": "PASS",
+   "detail": "27.58049939, expected 27.58049940, relative error -1.86e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 5.72e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 13.77666378579
+ },
+ "response": {
+  "wg": {
+   "h": 137.7666378579
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 30.244380871
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.303836737203763e-13,
+  "temperature": 1.3022894625947394e-13,
+  "time": 0.0,
+  "peak": 9.45355097288878e-13,
+  "balance": 0.0,
+  "outflow": 3.9790393202565614e-15,
+  "field": 1.8121044225392082e-07
+ }
+}
