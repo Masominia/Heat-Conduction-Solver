@@ -1,0 +1,73 @@
+{
+ "case": "shifter_clad120",
+ "title": "Cladding up to 12 um",
+ "notes": [
+  "Oxide above the heater stores heat but leads nowhere when the top is adiabatic.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 88.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 32.5158974216,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 134.224151 1e-7",
+   "status": "PASS",
+   "detail": "134.22415149, expected 134.22415100, relative error 3.63e-9"
+  },
+  {
+   "check": "pi_power wg h 31.0426002 1e-7",
+   "status": "PASS",
+   "detail": "31.04260016, expected 31.04260020, relative error -1.24e-9"
+  },
+  {
+   "check": "peak 32.5158974 1e-7",
+   "status": "PASS",
+   "detail": "32.51589742, expected 32.51589740, relative error 6.64e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.63e-14"
+  },
+  {
+   "check": "cells 21120",
+   "status": "PASS",
+   "detail": "21120 cells (240 by 88)"
+  }
+ ],
+ "temperature": {
+  "wg": 13.42241514877
+ },
+ "response": {
+  "wg": {
+   "h": 134.2241514877
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 31.042600162
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.9327112240846113e-13,
+  "temperature": 2.9327112240846113e-13,
+  "time": 0.0,
+  "peak": 2.0934373486055192e-13,
+  "balance": 0.0,
+  "outflow": 6.394884621840902e-14,
+  "field": 1.5372050554027733e-07
+ }
+}
