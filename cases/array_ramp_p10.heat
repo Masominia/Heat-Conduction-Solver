@@ -1,0 +1,114 @@
+# The same ramp at twice the pitch: the temperatures follow the powers more faithfully. Temperatures are the sum of the responses to each heater.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Array of 8 at 10 um pitch, linear power ramp
+grid dx=0.25 dy=0.25
+window width=120 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -35.25 -34.75 2 2.25
+rect tin -36 -34 4 4.25
+heater h1 xmin=-36 xmax=-34 ymin=4 ymax=4.25 power=0
+probe w1 xmin=-35.25 xmax=-34.75 ymin=2 ymax=2.25
+rect si -25.25 -24.75 2 2.25
+rect tin -26 -24 4 4.25
+heater h2 xmin=-26 xmax=-24 ymin=4 ymax=4.25 power=0.02
+probe w2 xmin=-25.25 xmax=-24.75 ymin=2 ymax=2.25
+rect si -15.25 -14.75 2 2.25
+rect tin -16 -14 4 4.25
+heater h3 xmin=-16 xmax=-14 ymin=4 ymax=4.25 power=0.04
+probe w3 xmin=-15.25 xmax=-14.75 ymin=2 ymax=2.25
+rect si -5.25 -4.75 2 2.25
+rect tin -6 -4 4 4.25
+heater h4 xmin=-6 xmax=-4 ymin=4 ymax=4.25 power=0.06
+probe w4 xmin=-5.25 xmax=-4.75 ymin=2 ymax=2.25
+rect si 4.75 5.25 2 2.25
+rect tin 4 6 4 4.25
+heater h5 xmin=4 xmax=6 ymin=4 ymax=4.25 power=0.08
+probe w5 xmin=4.75 xmax=5.25 ymin=2 ymax=2.25
+rect si 14.75 15.25 2 2.25
+rect tin 14 16 4 4.25
+heater h6 xmin=14 xmax=16 ymin=4 ymax=4.25 power=0.1
+probe w6 xmin=14.75 xmax=15.25 ymin=2 ymax=2.25
+rect si 24.75 25.25 2 2.25
+rect tin 24 26 4 4.25
+heater h7 xmin=24 xmax=26 ymin=4 ymax=4.25 power=0.12
+probe w7 xmin=24.75 xmax=25.25 ymin=2 ymax=2.25
+rect si 34.75 35.25 2 2.25
+rect tin 34 36 4 4.25
+heater h8 xmin=34 xmax=36 ymin=4 ymax=4.25 power=0.14
+probe w8 xmin=34.75 xmax=35.25 ymin=2 ymax=2.25
+expect response w1 h1 171.756478 1e-7
+expect response w1 h2 13.4753807 1e-7
+expect response w1 h3 0.92877945 1e-7
+expect response w1 h4 0.101434157 1e-7
+expect response w1 h5 0.0166956132 1e-7
+expect response w1 h6 0.00327957355 1e-7
+expect response w1 h7 0.000677606622 1e-7
+expect response w1 h8 0.000141917185 1e-7
+expect response w2 h1 13.4756712 1e-7
+expect response w2 h2 171.661604 1e-7
+expect response w2 h3 13.4695476 1e-7
+expect response w2 h4 0.928246257 1e-7
+expect response w2 h5 0.101356217 1e-7
+expect response w2 h6 0.0166809329 1e-7
+expect response w2 h7 0.00327665404 1e-7
+expect response w2 h8 0.00067775128 1e-7
+expect response w3 h1 0.928851318 1e-7
+expect response w3 h2 13.4695504 1e-7
+expect response w3 h3 171.661159 1e-7
+expect response w3 h4 13.4694955 1e-7
+expect response w3 h5 0.928237347 1e-7
+expect response w3 h6 0.101354509 1e-7
+expect response w3 h7 0.0166809663 1e-7
+expect response w3 h8 0.0032802691 1e-7
+expect response w4 h1 0.101449777 1e-7
+expect response w4 h2 0.928246984 1e-7
+expect response w4 h3 13.4694955 1e-7
+expect response w4 h4 171.661151 1e-7
+expect response w4 h5 13.469494 1e-7
+expect response w4 h6 0.928237355 1e-7
+expect response w4 h7 0.101356377 1e-7
+expect response w4 h8 0.0166989195 1e-7
+expect response w5 h1 0.0166989195 1e-7
+expect response w5 h2 0.101356377 1e-7
+expect response w5 h3 0.928237355 1e-7
+expect response w5 h4 13.469494 1e-7
+expect response w5 h5 171.661151 1e-7
+expect response w5 h6 13.4694955 1e-7
+expect response w5 h7 0.928246984 1e-7
+expect response w5 h8 0.101449777 1e-7
+expect response w6 h1 0.0032802691 1e-7
+expect response w6 h2 0.0166809663 1e-7
+expect response w6 h3 0.101354509 1e-7
+expect response w6 h4 0.928237347 1e-7
+expect response w6 h5 13.4694955 1e-7
+expect response w6 h6 171.661159 1e-7
+expect response w6 h7 13.4695504 1e-7
+expect response w6 h8 0.928851318 1e-7
+expect response w7 h1 0.00067775128 1e-7
+expect response w7 h2 0.00327665404 1e-7
+expect response w7 h3 0.0166809329 1e-7
+expect response w7 h4 0.101356217 1e-7
+expect response w7 h5 0.928246257 1e-7
+expect response w7 h6 13.4695476 1e-7
+expect response w7 h7 171.661604 1e-7
+expect response w7 h8 13.4756712 1e-7
+expect response w8 h1 0.000141917185 1e-7
+expect response w8 h2 0.000677606622 1e-7
+expect response w8 h3 0.00327957355 1e-7
+expect response w8 h4 0.0166956132 1e-7
+expect response w8 h5 0.101434157 1e-7
+expect response w8 h6 0.92877945 1e-7
+expect response w8 h7 13.4753807 1e-7
+expect response w8 h8 171.756478 1e-7
+expect temperature w1 0.314509628 1e-7
+expect temperature w2 4.03797344 1e-7
+expect temperature w3 8.03086251 1e-7
+expect temperature w4 12.0418977 1e-7
+expect temperature w5 16.0527605 1e-7
+expect temperature w6 20.0501429 1e-7
+expect temperature w7 23.9140151 1e-7
+expect temperature w8 25.7650918 1e-7
+expect peak 60.6323514 1e-7
+expect balance 1e-9
+expect cells 28800
