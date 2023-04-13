@@ -1,0 +1,80 @@
+{
+ "case": "metal_doped",
+ "title": "Doped silicon heater in the waveguide layer",
+ "notes": [
+  "Heating in the silicon layer itself, 1 um to each side of the core: no cladding in between.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 19.9807743145,
+  "peak_x": 1.375,
+  "peak_y": 2.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg right 147.765788 1e-7",
+   "status": "PASS",
+   "detail": "147.76578808, expected 147.76578800, relative error 5.68e-10"
+  },
+  {
+   "check": "response wg left 147.765788 1e-7",
+   "status": "PASS",
+   "detail": "147.76578808, expected 147.76578800, relative error 5.68e-10"
+  },
+  {
+   "check": "temperature wg 14.7765788 1e-7",
+   "status": "PASS",
+   "detail": "14.77657881, expected 14.77657880, relative error 5.68e-10"
+  },
+  {
+   "check": "peak 19.9807743 1e-7",
+   "status": "PASS",
+   "detail": "19.98077431, expected 19.98077430, relative error 7.25e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 6.26e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 14.77657880839
+ },
+ "response": {
+  "wg": {
+   "right": 147.7657880839,
+   "left": 147.7657880839
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "right": 28.1977765,
+   "left": 28.1977765
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.6543328819583545e-14,
+  "temperature": 1.4906579590707976e-14,
+  "time": 0.0,
+  "peak": 1.0663062199910782e-12,
+  "balance": 0.0,
+  "outflow": 0.0,
+  "field": 2.491044184015652e-07
+ }
+}
