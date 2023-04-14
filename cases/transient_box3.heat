@@ -1,0 +1,19 @@
+# A thicker buried oxide is more efficient and slower: the product of power and time changes little.
+# Reference: the same implicit Euler stepping with a sparse solver in SciPy.
+title Step response with 3 um of buried oxide
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=6
+layer si -10 0
+layer sio2 0 6
+rect si -0.25 0.25 3 3.25
+rect tin -1 1 5 5.25
+heater h xmin=-1 xmax=1 ymin=5 ymax=5.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=3 ymax=3.25
+transient heater=h dt=1 steps=500
+expect response wg h 219.111002 1e-7
+expect pi_power wg h 19.0162366 1e-7
+expect peak 45.6782584 1e-7
+expect balance 1e-9
+expect cells 15360
+expect tau wg 12.593224 1e-6
+expect rise wg 29.196595 1e-6
