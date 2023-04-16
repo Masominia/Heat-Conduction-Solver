@@ -1,0 +1,73 @@
+{
+ "case": "mesh_d125",
+ "title": "Standard shifter on a 125 nm mesh",
+ "notes": [
+  "The same device on three meshes that all place cell faces on its interfaces.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy. The pipeline reports the change between meshes."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 120.0,
+  "dx": 0.125,
+  "dy": 0.125,
+  "x0": -20.0,
+  "y0": -10.0,
+  "peak": 41.0836336954,
+  "peak_x": -0.0625,
+  "peak_y": 4.1875,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.292936 1e-7",
+   "status": "PASS",
+   "detail": "171.29293581, expected 171.29293600, relative error -1.09e-9"
+  },
+  {
+   "check": "pi_power wg h 24.3248015 1e-7",
+   "status": "PASS",
+   "detail": "24.32480153, expected 24.32480150, relative error 1.12e-9"
+  },
+  {
+   "check": "peak 41.0836337 1e-7",
+   "status": "PASS",
+   "detail": "41.08363370, expected 41.08363370, relative error -1.12e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.72e-13"
+  },
+  {
+   "check": "cells 38400",
+   "status": "PASS",
+   "detail": "38400 cells (320 by 120)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.12929358132
+ },
+ "response": {
+  "wg": {
+   "h": 171.2929358132
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.324801527
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.7422081512146035e-14,
+  "temperature": 1.7422081512146035e-14,
+  "time": 0.0,
+  "peak": 1.3957090358895966e-13,
+  "balance": 0.0,
+  "outflow": 6.87805368215777e-14,
+  "field": 1.216982292278041e-07
+ }
+}
