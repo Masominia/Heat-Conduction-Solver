@@ -1,0 +1,21 @@
+# The reference device of the library. Response is the temperature rise of the waveguide per mW per um of heater; the power for a phase shift of pi follows from the thermo-optic coefficient.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Standard phase shifter: TiN heater 1.75 um above a silicon waveguide on 2 um of buried oxide
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+probe heater xmin=-1 xmax=1 ymin=4 ymax=4.25
+probe surface x=0.125 y=4.875
+expect response wg h 171.846908 1e-7
+expect response heater h 410.365451 1e-7
+expect response surface h 395.679794 1e-7
+expect pi_power wg h 24.2463872 1e-7
+expect peak 41.4478746 1e-7
+expect balance 1e-9
+expect cells 14400
+expect hotter heater wg
