@@ -1,0 +1,88 @@
+{
+ "case": "transient_standard",
+ "title": "Step response of the standard shifter",
+ "notes": [
+  "The waveguide lags the heater by the diffusion time across the cladding between them.",
+  "Reference: the same implicit Euler stepping with a sparse solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.4478745745,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.846908 1e-7",
+   "status": "PASS",
+   "detail": "171.84690771, expected 171.84690800, relative error -1.67e-9"
+  },
+  {
+   "check": "pi_power wg h 24.2463872 1e-7",
+   "status": "PASS",
+   "detail": "24.24638722, expected 24.24638720, relative error 7.55e-10"
+  },
+  {
+   "check": "peak 41.4478746 1e-7",
+   "status": "PASS",
+   "detail": "41.44787457, expected 41.44787460, relative error -6.14e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.73e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  },
+  {
+   "check": "tau wg 9.3101406 1e-6",
+   "status": "PASS",
+   "detail": "9.31014061, expected 9.31014060, relative error 1.16e-9"
+  },
+  {
+   "check": "rise wg 20.684111 1e-6",
+   "status": "PASS",
+   "detail": "20.68411083, expected 20.68411100, relative error -8.18e-9"
+  }
+ ],
+ "temperature": {
+  "wg": 17.18469077125
+ },
+ "response": {
+  "wg": {
+   "h": 171.8469077125
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.246387218
+  }
+ },
+ "step": {
+  "wg": {
+   "tau": 9.31014061,
+   "rise": 20.68411083
+  }
+ },
+ "against_reference": {
+  "response": 1.2652312458619978e-13,
+  "temperature": 1.265231245861998e-13,
+  "time": 8.44615346593664e-11,
+  "peak": 9.5143893961959e-13,
+  "balance": 0.0,
+  "outflow": 7.389644451905042e-15,
+  "field": 1.2062698268941436e-07
+ }
+}
