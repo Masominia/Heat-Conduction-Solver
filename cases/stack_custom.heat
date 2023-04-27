@@ -1,0 +1,19 @@
+# Heated uniformly over the whole width, the stack is one-dimensional: the temperature at any depth is the heat flux times the thermal resistance below it.
+# Reference: the sum of thickness over conductivity, exact for this mesh.
+title A polymer cladding of conductivity 0.2 on oxide
+grid dx=0.5 dy=0.25
+window width=24 ymin=-5 ymax=4
+layer si -5 0
+layer sio2 0 2
+material polymer k=0.2 c=1.8e6
+layer polymer 2 4
+heater h xmin=-12 xmax=12 ymin=3.75 ymax=4 power=0.1
+probe mid x=0 y=2.875
+probe low x=3 y=-4.625
+expect response mid h 244.085798 1e-7
+expect response low h 0.105574324 1e-7
+expect peak 45.2419131 1e-7
+expect balance 1e-9
+expect cells 1728
+expect response mid h 244.085797754 1e-9
+expect response low h 0.105574324324 1e-9
