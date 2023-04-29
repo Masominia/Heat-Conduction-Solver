@@ -1,0 +1,85 @@
+{
+ "case": "solver_cg_trench",
+ "title": "Conjugate gradients: trench",
+ "notes": [
+  "The same system solved by preconditioned conjugate gradients, not by factorisation.",
+  "Reference: the sparse direct solution; the two solvers must agree to 1e-7."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 48.781578901,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 784.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 218.66935 1e-7",
+   "status": "PASS",
+   "detail": "218.66934969, expected 218.66935000, relative error -1.43e-9"
+  },
+  {
+   "check": "response wg2 h1 2.29613433 1e-7",
+   "status": "PASS",
+   "detail": "2.29613433, expected 2.29613433, relative error -9.30e-11"
+  },
+  {
+   "check": "pi_power wg1 h1 19.0546443 1e-7",
+   "status": "PASS",
+   "detail": "19.05464425, expected 19.05464430, relative error -2.62e-9"
+  },
+  {
+   "check": "peak 48.7815789 1e-7",
+   "status": "PASS",
+   "detail": "48.78157890, expected 48.78157890, relative error 2.08e-11"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 5.77e-15"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 21.86693496869,
+  "wg2": 0.2296134329786
+ },
+ "response": {
+  "wg1": {
+   "h1": 218.6693496869
+  },
+  "wg2": {
+   "h1": 2.296134329786
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 19.05464425
+  },
+  "wg2": {
+   "h1": 1814.6441228
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.20487506272397e-13,
+  "temperature": 1.2071496380850992e-13,
+  "time": 0.0,
+  "peak": 3.3457643249979885e-13,
+  "balance": 0.0,
+  "outflow": 1.6200374375330283e-14,
+  "field": 1.0233855682310579e-07
+ }
+}
