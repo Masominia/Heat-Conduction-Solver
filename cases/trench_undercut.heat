@@ -1,0 +1,25 @@
+# With the silicon etched away beneath, heat must travel sideways through the oxide: far more efficient, far slower. Neighbour at 10 um.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Substrate removed under the shifter
+grid dx=0.25 dy=0.25
+window width=80 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h1 xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg1 xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+rect si 9.75 10.25 2 2.25
+probe wg2 xmin=9.75 xmax=10.25 ymin=2 ymax=2.25
+rect air -6 6 -6 0
+transient heater=h1 dt=20 steps=600
+expect response wg1 h1 494.96988 1e-7
+expect response wg2 h1 44.8580045 1e-7
+expect pi_power wg1 h1 8.41802064 1e-7
+expect peak 69.5903517 1e-7
+expect balance 1e-9
+expect cells 19200
+expect tau wg1 41.296227 1e-6
+expect rise wg1 92.323008 1e-6
+expect tau wg2 61.868189 1e-6
+expect rise wg2 109.38854 1e-6
