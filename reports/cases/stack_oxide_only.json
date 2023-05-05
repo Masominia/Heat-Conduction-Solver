@@ -1,0 +1,90 @@
+{
+ "case": "stack_oxide_only",
+ "title": "3 um of oxide directly on the sink",
+ "notes": [
+  "Heated uniformly over the whole width, the stack is one-dimensional: the temperature at any depth is the heat flux times the thermal resistance below it.",
+  "Reference: the sum of thickness over conductivity, exact for this mesh."
+ ],
+ "metrics": {
+  "nx": 48.0,
+  "ny": 12.0,
+  "dx": 0.5,
+  "dy": 0.25,
+  "x0": -12.0,
+  "y0": 0.0,
+  "peak": 8.6805555556,
+  "peak_x": -11.75,
+  "peak_y": 2.875,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response mid h 56.6123188 1e-7",
+   "status": "PASS",
+   "detail": "56.61231884, expected 56.61231880, relative error 7.17e-10"
+  },
+  {
+   "check": "response low h 11.3224638 1e-7",
+   "status": "PASS",
+   "detail": "11.32246377, expected 11.32246380, relative error -2.82e-9"
+  },
+  {
+   "check": "peak 8.68055556 1e-7",
+   "status": "PASS",
+   "detail": "8.68055556, expected 8.68055556, relative error -5.12e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 2.00e-15"
+  },
+  {
+   "check": "cells 576",
+   "status": "PASS",
+   "detail": "576 cells (48 by 12)"
+  },
+  {
+   "check": "response mid h 56.6123188406 1e-9",
+   "status": "PASS",
+   "detail": "56.61231884, expected 56.61231884, relative error -3.60e-13"
+  },
+  {
+   "check": "response low h 11.3224637681 1e-9",
+   "status": "PASS",
+   "detail": "11.32246377, expected 11.32246377, relative error 1.41e-12"
+  }
+ ],
+ "temperature": {
+  "mid": 5.661231884058,
+  "low": 1.132246376812
+ },
+ "response": {
+  "mid": {
+   "h": 56.61231884058
+  },
+  "low": {
+   "h": 11.32246376812
+  }
+ },
+ "pi_power": {
+  "mid": {
+   "h": 73.6
+  },
+  "low": {
+   "h": 368.0
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 3.5974380807601894e-13,
+  "temperature": 3.59665364157991e-13,
+  "time": 0.0,
+  "peak": 5.1191818783990995e-12,
+  "balance": 0.0,
+  "outflow": 1.4210854715202005e-15,
+  "field": 5.120000137139864e-08
+ }
+}
