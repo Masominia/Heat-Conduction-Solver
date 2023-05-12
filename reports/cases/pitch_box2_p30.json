@@ -1,0 +1,90 @@
+{
+ "case": "pitch_box2_p30",
+ "title": "Neighbouring waveguide 30 um away, 2 um buried oxide",
+ "notes": [
+  "Crosstalk: how much of the temperature rise of the heated waveguide reaches its neighbour. The pipeline fits its decay with distance.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 41.4477369234,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 171.845661 1e-7",
+   "status": "PASS",
+   "detail": "171.84566078, expected 171.84566100, relative error -1.31e-9"
+  },
+  {
+   "check": "response wg2 h1 0.0955973312 1e-7",
+   "status": "PASS",
+   "detail": "0.09559733, expected 0.09559733, relative error -1.22e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 24.2465632 1e-7",
+   "status": "PASS",
+   "detail": "24.24656315, expected 24.24656320, relative error -1.91e-9"
+  },
+  {
+   "check": "peak 41.4477369 1e-7",
+   "status": "PASS",
+   "detail": "41.44773692, expected 41.44773690, relative error 5.65e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.02e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  },
+  {
+   "check": "hotter wg1 wg2",
+   "status": "PASS",
+   "detail": "17.184566 K against 0.009560 K"
+  }
+ ],
+ "temperature": {
+  "wg1": 17.18456607756,
+  "wg2": 0.009559733118831
+ },
+ "response": {
+  "wg1": {
+   "h1": 171.8456607756
+  },
+  "wg2": {
+   "h1": 0.09559733118831
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 24.246563154
+  },
+  "wg2": {
+   "h1": 43585.596113
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.8920719581528524e-13,
+  "temperature": 1.8937258672071817e-13,
+  "time": 0.0,
+  "peak": 8.501263731583968e-13,
+  "balance": 0.0,
+  "outflow": 5.826450433232821e-15,
+  "field": 1.2050571579950247e-07
+ }
+}
