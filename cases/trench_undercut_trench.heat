@@ -1,0 +1,22 @@
+# A bridge of oxide held only by what lies outside this cross-section; here it connects through thin air to its surroundings, so the numbers are an upper bound on isolation. Neighbour at 10 um.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Undercut with side trenches: a suspended shifter
+grid dx=0.25 dy=0.25
+window width=80 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h1 xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg1 xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+rect si 9.75 10.25 2 2.25
+probe wg2 xmin=9.75 xmax=10.25 ymin=2 ymax=2.25
+rect air -6 6 -6 0
+rect air 4 6 0 5
+rect air -6 -4 0 5
+expect response wg1 h1 5160.99226 1e-7
+expect response wg2 h1 34.9242555 1e-7
+expect pi_power wg1 h1 0.80733829 1e-7
+expect peak 538.231536 1e-7
+expect balance 1e-9
+expect cells 19200
