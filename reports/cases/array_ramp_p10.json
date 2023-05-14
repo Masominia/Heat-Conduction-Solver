@@ -1,0 +1,584 @@
+{
+ "case": "array_ramp_p10",
+ "title": "Array of 8 at 10 um pitch, linear power ramp",
+ "notes": [
+  "The same ramp at twice the pitch: the temperatures follow the powers more faithfully. Temperatures are the sum of the responses to each heater.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 480.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -60.0,
+  "y0": -10.0,
+  "peak": 60.6323513699,
+  "peak_x": 34.875,
+  "peak_y": 4.125,
+  "injected": 560.0,
+  "to_sink": 560.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response w1 h1 171.756478 1e-7",
+   "status": "PASS",
+   "detail": "171.75647837, expected 171.75647800, relative error 2.16e-9"
+  },
+  {
+   "check": "response w1 h2 13.4753807 1e-7",
+   "status": "PASS",
+   "detail": "13.47538065, expected 13.47538070, relative error -3.43e-9"
+  },
+  {
+   "check": "response w1 h3 0.92877945 1e-7",
+   "status": "PASS",
+   "detail": "0.92877945, expected 0.92877945, relative error -6.90e-13"
+  },
+  {
+   "check": "response w1 h4 0.101434157 1e-7",
+   "status": "PASS",
+   "detail": "0.10143416, expected 0.10143416, relative error 2.44e-9"
+  },
+  {
+   "check": "response w1 h5 0.0166956132 1e-7",
+   "status": "PASS",
+   "detail": "0.01669561, expected 0.01669561, relative error 1.90e-9"
+  },
+  {
+   "check": "response w1 h6 0.00327957355 1e-7",
+   "status": "PASS",
+   "detail": "0.00327957, expected 0.00327957, relative error -1.46e-9"
+  },
+  {
+   "check": "response w1 h7 0.000677606622 1e-7",
+   "status": "PASS",
+   "detail": "0.00067761, expected 0.00067761, relative error 8.34e-11"
+  },
+  {
+   "check": "response w1 h8 0.000141917185 1e-7",
+   "status": "PASS",
+   "detail": "0.00014192, expected 0.00014192, relative error -2.71e-9"
+  },
+  {
+   "check": "response w2 h1 13.4756712 1e-7",
+   "status": "PASS",
+   "detail": "13.47567118, expected 13.47567120, relative error -1.25e-9"
+  },
+  {
+   "check": "response w2 h2 171.661604 1e-7",
+   "status": "PASS",
+   "detail": "171.66160428, expected 171.66160400, relative error 1.63e-9"
+  },
+  {
+   "check": "response w2 h3 13.4695476 1e-7",
+   "status": "PASS",
+   "detail": "13.46954764, expected 13.46954760, relative error 2.94e-9"
+  },
+  {
+   "check": "response w2 h4 0.928246257 1e-7",
+   "status": "PASS",
+   "detail": "0.92824626, expected 0.92824626, relative error 1.10e-10"
+  },
+  {
+   "check": "response w2 h5 0.101356217 1e-7",
+   "status": "PASS",
+   "detail": "0.10135622, expected 0.10135622, relative error 1.96e-9"
+  },
+  {
+   "check": "response w2 h6 0.0166809329 1e-7",
+   "status": "PASS",
+   "detail": "0.01668093, expected 0.01668093, relative error -8.69e-10"
+  },
+  {
+   "check": "response w2 h7 0.00327665404 1e-7",
+   "status": "PASS",
+   "detail": "0.00327665, expected 0.00327665, relative error -1.45e-9"
+  },
+  {
+   "check": "response w2 h8 0.00067775128 1e-7",
+   "status": "PASS",
+   "detail": "0.00067775, expected 0.00067775, relative error 2.42e-10"
+  },
+  {
+   "check": "response w3 h1 0.928851318 1e-7",
+   "status": "PASS",
+   "detail": "0.92885132, expected 0.92885132, relative error -4.06e-10"
+  },
+  {
+   "check": "response w3 h2 13.4695504 1e-7",
+   "status": "PASS",
+   "detail": "13.46955044, expected 13.46955040, relative error 3.32e-9"
+  },
+  {
+   "check": "response w3 h3 171.661159 1e-7",
+   "status": "PASS",
+   "detail": "171.66115943, expected 171.66115900, relative error 2.53e-9"
+  },
+  {
+   "check": "response w3 h4 13.4694955 1e-7",
+   "status": "PASS",
+   "detail": "13.46949549, expected 13.46949550, relative error -9.21e-10"
+  },
+  {
+   "check": "response w3 h5 0.928237347 1e-7",
+   "status": "PASS",
+   "detail": "0.92823735, expected 0.92823735, relative error 1.83e-10"
+  },
+  {
+   "check": "response w3 h6 0.101354509 1e-7",
+   "status": "PASS",
+   "detail": "0.10135451, expected 0.10135451, relative error 6.10e-10"
+  },
+  {
+   "check": "response w3 h7 0.0166809663 1e-7",
+   "status": "PASS",
+   "detail": "0.01668097, expected 0.01668097, relative error 2.51e-9"
+  },
+  {
+   "check": "response w3 h8 0.0032802691 1e-7",
+   "status": "PASS",
+   "detail": "0.00328027, expected 0.00328027, relative error -3.39e-10"
+  },
+  {
+   "check": "response w4 h1 0.101449777 1e-7",
+   "status": "PASS",
+   "detail": "0.10144978, expected 0.10144978, relative error 4.56e-9"
+  },
+  {
+   "check": "response w4 h2 0.928246984 1e-7",
+   "status": "PASS",
+   "detail": "0.92824698, expected 0.92824698, relative error -2.01e-10"
+  },
+  {
+   "check": "response w4 h3 13.4694955 1e-7",
+   "status": "PASS",
+   "detail": "13.46949552, expected 13.46949550, relative error 1.23e-9"
+  },
+  {
+   "check": "response w4 h4 171.661151 1e-7",
+   "status": "PASS",
+   "detail": "171.66115145, expected 171.66115100, relative error 2.59e-9"
+  },
+  {
+   "check": "response w4 h5 13.469494 1e-7",
+   "status": "PASS",
+   "detail": "13.46949404, expected 13.46949400, relative error 3.17e-9"
+  },
+  {
+   "check": "response w4 h6 0.928237355 1e-7",
+   "status": "PASS",
+   "detail": "0.92823735, expected 0.92823736, relative error -4.34e-10"
+  },
+  {
+   "check": "response w4 h7 0.101356377 1e-7",
+   "status": "PASS",
+   "detail": "0.10135638, expected 0.10135638, relative error -4.27e-9"
+  },
+  {
+   "check": "response w4 h8 0.0166989195 1e-7",
+   "status": "PASS",
+   "detail": "0.01669892, expected 0.01669892, relative error 1.00e-9"
+  },
+  {
+   "check": "response w5 h1 0.0166989195 1e-7",
+   "status": "PASS",
+   "detail": "0.01669892, expected 0.01669892, relative error 1.00e-9"
+  },
+  {
+   "check": "response w5 h2 0.101356377 1e-7",
+   "status": "PASS",
+   "detail": "0.10135638, expected 0.10135638, relative error -4.27e-9"
+  },
+  {
+   "check": "response w5 h3 0.928237355 1e-7",
+   "status": "PASS",
+   "detail": "0.92823735, expected 0.92823736, relative error -4.34e-10"
+  },
+  {
+   "check": "response w5 h4 13.469494 1e-7",
+   "status": "PASS",
+   "detail": "13.46949404, expected 13.46949400, relative error 3.17e-9"
+  },
+  {
+   "check": "response w5 h5 171.661151 1e-7",
+   "status": "PASS",
+   "detail": "171.66115145, expected 171.66115100, relative error 2.59e-9"
+  },
+  {
+   "check": "response w5 h6 13.4694955 1e-7",
+   "status": "PASS",
+   "detail": "13.46949552, expected 13.46949550, relative error 1.23e-9"
+  },
+  {
+   "check": "response w5 h7 0.928246984 1e-7",
+   "status": "PASS",
+   "detail": "0.92824698, expected 0.92824698, relative error -2.01e-10"
+  },
+  {
+   "check": "response w5 h8 0.101449777 1e-7",
+   "status": "PASS",
+   "detail": "0.10144978, expected 0.10144978, relative error 4.56e-9"
+  },
+  {
+   "check": "response w6 h1 0.0032802691 1e-7",
+   "status": "PASS",
+   "detail": "0.00328027, expected 0.00328027, relative error -3.39e-10"
+  },
+  {
+   "check": "response w6 h2 0.0166809663 1e-7",
+   "status": "PASS",
+   "detail": "0.01668097, expected 0.01668097, relative error 2.51e-9"
+  },
+  {
+   "check": "response w6 h3 0.101354509 1e-7",
+   "status": "PASS",
+   "detail": "0.10135451, expected 0.10135451, relative error 6.10e-10"
+  },
+  {
+   "check": "response w6 h4 0.928237347 1e-7",
+   "status": "PASS",
+   "detail": "0.92823735, expected 0.92823735, relative error 1.83e-10"
+  },
+  {
+   "check": "response w6 h5 13.4694955 1e-7",
+   "status": "PASS",
+   "detail": "13.46949549, expected 13.46949550, relative error -9.22e-10"
+  },
+  {
+   "check": "response w6 h6 171.661159 1e-7",
+   "status": "PASS",
+   "detail": "171.66115943, expected 171.66115900, relative error 2.53e-9"
+  },
+  {
+   "check": "response w6 h7 13.4695504 1e-7",
+   "status": "PASS",
+   "detail": "13.46955044, expected 13.46955040, relative error 3.32e-9"
+  },
+  {
+   "check": "response w6 h8 0.928851318 1e-7",
+   "status": "PASS",
+   "detail": "0.92885132, expected 0.92885132, relative error -4.07e-10"
+  },
+  {
+   "check": "response w7 h1 0.00067775128 1e-7",
+   "status": "PASS",
+   "detail": "0.00067775, expected 0.00067775, relative error 2.42e-10"
+  },
+  {
+   "check": "response w7 h2 0.00327665404 1e-7",
+   "status": "PASS",
+   "detail": "0.00327665, expected 0.00327665, relative error -1.45e-9"
+  },
+  {
+   "check": "response w7 h3 0.0166809329 1e-7",
+   "status": "PASS",
+   "detail": "0.01668093, expected 0.01668093, relative error -8.69e-10"
+  },
+  {
+   "check": "response w7 h4 0.101356217 1e-7",
+   "status": "PASS",
+   "detail": "0.10135622, expected 0.10135622, relative error 1.96e-9"
+  },
+  {
+   "check": "response w7 h5 0.928246257 1e-7",
+   "status": "PASS",
+   "detail": "0.92824626, expected 0.92824626, relative error 1.10e-10"
+  },
+  {
+   "check": "response w7 h6 13.4695476 1e-7",
+   "status": "PASS",
+   "detail": "13.46954764, expected 13.46954760, relative error 2.94e-9"
+  },
+  {
+   "check": "response w7 h7 171.661604 1e-7",
+   "status": "PASS",
+   "detail": "171.66160428, expected 171.66160400, relative error 1.63e-9"
+  },
+  {
+   "check": "response w7 h8 13.4756712 1e-7",
+   "status": "PASS",
+   "detail": "13.47567118, expected 13.47567120, relative error -1.25e-9"
+  },
+  {
+   "check": "response w8 h1 0.000141917185 1e-7",
+   "status": "PASS",
+   "detail": "0.00014192, expected 0.00014192, relative error -2.71e-9"
+  },
+  {
+   "check": "response w8 h2 0.000677606622 1e-7",
+   "status": "PASS",
+   "detail": "0.00067761, expected 0.00067761, relative error 8.34e-11"
+  },
+  {
+   "check": "response w8 h3 0.00327957355 1e-7",
+   "status": "PASS",
+   "detail": "0.00327957, expected 0.00327957, relative error -1.46e-9"
+  },
+  {
+   "check": "response w8 h4 0.0166956132 1e-7",
+   "status": "PASS",
+   "detail": "0.01669561, expected 0.01669561, relative error 1.90e-9"
+  },
+  {
+   "check": "response w8 h5 0.101434157 1e-7",
+   "status": "PASS",
+   "detail": "0.10143416, expected 0.10143416, relative error 2.44e-9"
+  },
+  {
+   "check": "response w8 h6 0.92877945 1e-7",
+   "status": "PASS",
+   "detail": "0.92877945, expected 0.92877945, relative error -8.72e-13"
+  },
+  {
+   "check": "response w8 h7 13.4753807 1e-7",
+   "status": "PASS",
+   "detail": "13.47538065, expected 13.47538070, relative error -3.43e-9"
+  },
+  {
+   "check": "response w8 h8 171.756478 1e-7",
+   "status": "PASS",
+   "detail": "171.75647837, expected 171.75647800, relative error 2.16e-9"
+  },
+  {
+   "check": "temperature w1 0.314509628 1e-7",
+   "status": "PASS",
+   "detail": "0.31450963, expected 0.31450963, relative error 3.94e-10"
+  },
+  {
+   "check": "temperature w2 4.03797344 1e-7",
+   "status": "PASS",
+   "detail": "4.03797344, expected 4.03797344, relative error 2.30e-10"
+  },
+  {
+   "check": "temperature w3 8.03086251 1e-7",
+   "status": "PASS",
+   "detail": "8.03086251, expected 8.03086251, relative error -2.69e-10"
+  },
+  {
+   "check": "temperature w4 12.0418977 1e-7",
+   "status": "PASS",
+   "detail": "12.04189772, expected 12.04189770, relative error 1.65e-9"
+  },
+  {
+   "check": "temperature w5 16.0527605 1e-7",
+   "status": "PASS",
+   "detail": "16.05276054, expected 16.05276050, relative error 2.40e-9"
+  },
+  {
+   "check": "temperature w6 20.0501429 1e-7",
+   "status": "PASS",
+   "detail": "20.05014286, expected 20.05014290, relative error -1.95e-9"
+  },
+  {
+   "check": "temperature w7 23.9140151 1e-7",
+   "status": "PASS",
+   "detail": "23.91401509, expected 23.91401510, relative error -5.39e-10"
+  },
+  {
+   "check": "temperature w8 25.7650918 1e-7",
+   "status": "PASS",
+   "detail": "25.76509180, expected 25.76509180, relative error -4.24e-12"
+  },
+  {
+   "check": "peak 60.6323514 1e-7",
+   "status": "PASS",
+   "detail": "60.63235137, expected 60.63235140, relative error -4.96e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "560.000000 W/m in, 560.000000 W/m out, relative difference 1.03e-14"
+  },
+  {
+   "check": "cells 28800",
+   "status": "PASS",
+   "detail": "28800 cells (480 by 60)"
+  }
+ ],
+ "temperature": {
+  "w1": 0.3145096281241,
+  "w2": 4.037973440927,
+  "w3": 8.030862507843,
+  "w4": 12.04189771986,
+  "w5": 16.05276053847,
+  "w6": 20.0501428608,
+  "w7": 23.91401508712,
+  "w8": 25.76509179989
+ },
+ "response": {
+  "w1": {
+   "h1": 171.7564783714,
+   "h2": 13.47538065379,
+   "h3": 0.9287794499994,
+   "h4": 0.1014341572471,
+   "h5": 0.01669561323171,
+   "h6": 0.003279573545208,
+   "h7": 0.0006776066220565,
+   "h8": 0.0001419171846156
+  },
+  "w2": {
+   "h1": 13.47567118317,
+   "h2": 171.6616042793,
+   "h3": 13.46954763966,
+   "h4": 0.9282462571023,
+   "h5": 0.1013562171991,
+   "h6": 0.0166809328855,
+   "h7": 0.00327665403526,
+   "h8": 0.0006777512801643
+  },
+  "w3": {
+   "h1": 0.9288513176226,
+   "h2": 13.46955044472,
+   "h3": 171.6611594345,
+   "h4": 13.46949548759,
+   "h5": 0.92823734717,
+   "h6": 0.1013545090618,
+   "h7": 0.01668096634187,
+   "h8": 0.003280269098887
+  },
+  "w4": {
+   "h1": 0.1014497774625,
+   "h2": 0.9282469838138,
+   "h3": 13.46949551654,
+   "h4": 171.6611514454,
+   "h5": 13.46949404276,
+   "h6": 0.9282373545969,
+   "h7": 0.1013563765674,
+   "h8": 0.01669891951672
+  },
+  "w5": {
+   "h1": 0.01669891951672,
+   "h2": 0.1013563765674,
+   "h3": 0.928237354597,
+   "h4": 13.46949404276,
+   "h5": 171.6611514454,
+   "h6": 13.46949551654,
+   "h7": 0.9282469838137,
+   "h8": 0.1014497774625
+  },
+  "w6": {
+   "h1": 0.003280269098886,
+   "h2": 0.01668096634187,
+   "h3": 0.1013545090618,
+   "h4": 0.9282373471698,
+   "h5": 13.46949548759,
+   "h6": 171.6611594344,
+   "h7": 13.46955044472,
+   "h8": 0.9288513176224
+  },
+  "w7": {
+   "h1": 0.0006777512801643,
+   "h2": 0.00327665403526,
+   "h3": 0.0166809328855,
+   "h4": 0.1013562171991,
+   "h5": 0.9282462571022,
+   "h6": 13.46954763966,
+   "h7": 171.6616042793,
+   "h8": 13.47567118317
+  },
+  "w8": {
+   "h1": 0.0001419171846156,
+   "h2": 0.0006776066220565,
+   "h3": 0.003279573545208,
+   "h4": 0.01669561323171,
+   "h5": 0.1014341572471,
+   "h6": 0.9287794499992,
+   "h7": 13.47538065378,
+   "h8": 171.7564783713
+  }
+ },
+ "pi_power": {
+  "w1": {
+   "h1": 24.259152878,
+   "h2": 309.20586021,
+   "h3": 4486.1744806,
+   "h4": 41077.550006,
+   "h5": 249566.55433,
+   "h6": 1270490.3882,
+   "h7": 6149093.7825,
+   "h8": 29359845.87
+  },
+  "w2": {
+   "h1": 309.19919387,
+   "h2": 24.272560449,
+   "h3": 309.33976241,
+   "h4": 4488.7513791,
+   "h5": 41109.137474,
+   "h6": 249786.18973,
+   "h7": 1271622.3995,
+   "h8": 6147781.3301
+  },
+  "w3": {
+   "h1": 4485.8273737,
+   "h2": 309.33969799,
+   "h3": 24.272623349,
+   "h4": 309.34096014,
+   "h5": 4488.7944655,
+   "h6": 41109.83029,
+   "h7": 249785.68875,
+   "h8": 1270220.9913
+  },
+  "w4": {
+   "h1": 41071.225299,
+   "h2": 4488.7478649,
+   "h3": 309.34095947,
+   "h4": 24.272624479,
+   "h5": 309.34099332,
+   "h6": 4488.7944296,
+   "h7": 41109.072836,
+   "h8": 249517.14166
+  },
+  "w5": {
+   "h1": 249517.14166,
+   "h2": 41109.072836,
+   "h3": 4488.7944296,
+   "h4": 309.34099332,
+   "h5": 24.272624479,
+   "h6": 309.34095947,
+   "h7": 4488.7478649,
+   "h8": 41071.225299
+  },
+  "w6": {
+   "h1": 1270220.9913,
+   "h2": 249785.68875,
+   "h3": 41109.83029,
+   "h4": 4488.7944655,
+   "h5": 309.34096014,
+   "h6": 24.272623349,
+   "h7": 309.33969799,
+   "h8": 4485.8273737
+  },
+  "w7": {
+   "h1": 6147781.3301,
+   "h2": 1271622.3995,
+   "h3": 249786.18973,
+   "h4": 41109.137474,
+   "h5": 4488.7513791,
+   "h6": 309.33976241,
+   "h7": 24.272560449,
+   "h8": 309.19919387
+  },
+  "w8": {
+   "h1": 29359845.87,
+   "h2": 6149093.7825,
+   "h3": 1270490.3882,
+   "h4": 249566.55433,
+   "h5": 41077.550006,
+   "h6": 4486.1744806,
+   "h7": 309.20586021,
+   "h8": 24.259152878
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 4.552697742616107e-13,
+  "temperature": 2.717220636061351e-13,
+  "time": 0.0,
+  "peak": 5.825451033414583e-13,
+  "balance": 0.0,
+  "outflow": 4.0602442043434294e-15,
+  "field": 8.241878096018586e-08
+ }
+}
