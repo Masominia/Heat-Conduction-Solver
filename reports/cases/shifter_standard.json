@@ -1,0 +1,102 @@
+{
+ "case": "shifter_standard",
+ "title": "Standard phase shifter: TiN heater 1.75 um above a silicon waveguide on 2 um of buried oxide",
+ "notes": [
+  "The reference device of the library. Response is the temperature rise of the waveguide per mW per um of heater; the power for a phase shift of pi follows from the thermo-optic coefficient.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.4478745745,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.846908 1e-7",
+   "status": "PASS",
+   "detail": "171.84690771, expected 171.84690800, relative error -1.67e-9"
+  },
+  {
+   "check": "response heater h 410.365451 1e-7",
+   "status": "PASS",
+   "detail": "410.36545081, expected 410.36545100, relative error -4.56e-10"
+  },
+  {
+   "check": "response surface h 395.679794 1e-7",
+   "status": "PASS",
+   "detail": "395.67979448, expected 395.67979400, relative error 1.22e-9"
+  },
+  {
+   "check": "pi_power wg h 24.2463872 1e-7",
+   "status": "PASS",
+   "detail": "24.24638722, expected 24.24638720, relative error 7.55e-10"
+  },
+  {
+   "check": "peak 41.4478746 1e-7",
+   "status": "PASS",
+   "detail": "41.44787457, expected 41.44787460, relative error -6.14e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.73e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  },
+  {
+   "check": "hotter heater wg",
+   "status": "PASS",
+   "detail": "41.036545 K against 17.184691 K"
+  }
+ ],
+ "temperature": {
+  "wg": 17.18469077125,
+  "heater": 41.0365450813,
+  "surface": 39.5679794484
+ },
+ "response": {
+  "wg": {
+   "h": 171.8469077125
+  },
+  "heater": {
+   "h": 410.365450813
+  },
+  "surface": {
+   "h": 395.679794484
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.246387218
+  },
+  "heater": {
+   "h": 10.153551325
+  },
+  "surface": {
+   "h": 10.530400401
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.2652312458619978e-13,
+  "temperature": 1.265231245861998e-13,
+  "time": 0.0,
+  "peak": 9.5143893961959e-13,
+  "balance": 0.0,
+  "outflow": 7.389644451905042e-15,
+  "field": 1.2062698268941436e-07
+ }
+}
