@@ -1,0 +1,73 @@
+{
+ "case": "top_forced_air",
+ "title": "Standard shifter with strongly forced air above (h = 1000 W/m2K)",
+ "notes": [
+  "Heat leaving through the top surface. For any realistic air flow it is negligible next to conduction to the substrate.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.3786608921,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 99.7000195537,
+  "to_surface": 0.2999804463,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.50928 1e-7",
+   "status": "PASS",
+   "detail": "171.50928035, expected 171.50928000, relative error 2.02e-9"
+  },
+  {
+   "check": "pi_power wg h 24.2941178 1e-7",
+   "status": "PASS",
+   "detail": "24.29411784, expected 24.29411780, relative error 1.48e-9"
+  },
+  {
+   "check": "peak 41.3786609 1e-7",
+   "status": "PASS",
+   "detail": "41.37866089, expected 41.37866090, relative error -1.91e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.35e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.15092803457
+ },
+ "response": {
+  "wg": {
+   "h": 171.5092803457
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.294117836
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.1973846912973947e-13,
+  "temperature": 2.1977989795121942e-13,
+  "time": 0.0,
+  "peak": 6.216162263343809e-14,
+  "balance": 0.0,
+  "outflow": 5.2011728257639336e-14,
+  "field": 1.1966484004450272e-07
+ }
+}
