@@ -1,0 +1,17 @@
+# Heated uniformly over the whole width, the stack is one-dimensional: the temperature at any depth is the heat flux times the thermal resistance below it.
+# Reference: the sum of thickness over conductivity, exact for this mesh.
+title 2 um of oxide on silicon
+grid dx=0.5 dy=0.25
+window width=24 ymin=-10 ymax=2
+layer si -10 0
+layer sio2 0 2
+heater h xmin=-12 xmax=12 ymin=1.75 ymax=2 power=0.1
+probe mid x=0 y=0.875
+probe low x=3 y=-9.625
+expect response mid h 29.2343974 1e-7
+expect response low h 0.105574324 1e-7
+expect peak 5.94276342 1e-7
+expect balance 1e-9
+expect cells 2304
+expect response mid h 29.2343974409 1e-9
+expect response low h 0.105574324324 1e-9
