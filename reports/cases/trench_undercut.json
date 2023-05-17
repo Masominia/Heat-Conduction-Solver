@@ -1,0 +1,114 @@
+{
+ "case": "trench_undercut",
+ "title": "Substrate removed under the shifter",
+ "notes": [
+  "With the silicon etched away beneath, heat must travel sideways through the oxide: far more efficient, far slower. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 69.5903516596,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 494.96988 1e-7",
+   "status": "PASS",
+   "detail": "494.96987979, expected 494.96988000, relative error -4.34e-10"
+  },
+  {
+   "check": "response wg2 h1 44.8580045 1e-7",
+   "status": "PASS",
+   "detail": "44.85800447, expected 44.85800450, relative error -6.88e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 8.41802064 1e-7",
+   "status": "PASS",
+   "detail": "8.41802064, expected 8.41802064, relative error 5.89e-10"
+  },
+  {
+   "check": "peak 69.5903517 1e-7",
+   "status": "PASS",
+   "detail": "69.59035166, expected 69.59035170, relative error -5.81e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 6.94e-14"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  },
+  {
+   "check": "tau wg1 41.296227 1e-6",
+   "status": "PASS",
+   "detail": "41.29622716, expected 41.29622700, relative error 3.86e-9"
+  },
+  {
+   "check": "rise wg1 92.323008 1e-6",
+   "status": "PASS",
+   "detail": "92.32300794, expected 92.32300800, relative error -5.98e-10"
+  },
+  {
+   "check": "tau wg2 61.868189 1e-6",
+   "status": "PASS",
+   "detail": "61.86818949, expected 61.86818900, relative error 7.97e-9"
+  },
+  {
+   "check": "rise wg2 109.38854 1e-6",
+   "status": "PASS",
+   "detail": "109.38853990, expected 109.38854000, relative error -9.07e-10"
+  }
+ ],
+ "temperature": {
+  "wg1": 49.49698797853,
+  "wg2": 4.485800446915
+ },
+ "response": {
+  "wg1": {
+   "h1": 494.9698797853
+  },
+  "wg2": {
+   "h1": 44.85800446915
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 8.418020645
+  },
+  "wg2": {
+   "h1": 92.885689321
+  }
+ },
+ "step": {
+  "wg1": {
+   "tau": 41.29622716,
+   "rise": 92.32300794
+  },
+  "wg2": {
+   "tau": 61.86818949,
+   "rise": 109.3885399
+  }
+ },
+ "against_reference": {
+  "response": 1.0485961126441269e-13,
+  "temperature": 1.0493881036657616e-13,
+  "time": 5.1868699390833375e-11,
+  "peak": 2.5525906925852516e-14,
+  "balance": 0.0,
+  "outflow": 2.0037305148434824e-14,
+  "field": 7.178869429045142e-08
+ }
+}
