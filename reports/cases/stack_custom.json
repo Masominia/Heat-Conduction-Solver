@@ -1,0 +1,90 @@
+{
+ "case": "stack_custom",
+ "title": "A polymer cladding of conductivity 0.2 on oxide",
+ "notes": [
+  "Heated uniformly over the whole width, the stack is one-dimensional: the temperature at any depth is the heat flux times the thermal resistance below it.",
+  "Reference: the sum of thickness over conductivity, exact for this mesh."
+ ],
+ "metrics": {
+  "nx": 48.0,
+  "ny": 36.0,
+  "dx": 0.5,
+  "dy": 0.25,
+  "x0": -12.0,
+  "y0": -5.0,
+  "peak": 45.2419131088,
+  "peak_x": 5.25,
+  "peak_y": 3.875,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response mid h 244.085798 1e-7",
+   "status": "PASS",
+   "detail": "244.08579775, expected 244.08579800, relative error -1.01e-9"
+  },
+  {
+   "check": "response low h 0.105574324 1e-7",
+   "status": "PASS",
+   "detail": "0.10557432, expected 0.10557432, relative error 3.07e-9"
+  },
+  {
+   "check": "peak 45.2419131 1e-7",
+   "status": "PASS",
+   "detail": "45.24191311, expected 45.24191310, relative error 1.94e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 9.55e-15"
+  },
+  {
+   "check": "cells 1728",
+   "status": "PASS",
+   "detail": "1728 cells (48 by 36)"
+  },
+  {
+   "check": "response mid h 244.085797754 1e-9",
+   "status": "PASS",
+   "detail": "244.08579775, expected 244.08579775, relative error 1.13e-12"
+  },
+  {
+   "check": "response low h 0.105574324324 1e-9",
+   "status": "PASS",
+   "detail": "0.10557432, expected 0.10557432, relative error 3.06e-12"
+  }
+ ],
+ "temperature": {
+  "mid": 24.40857977543,
+  "low": 0.01055743243243
+ },
+ "response": {
+  "mid": {
+   "h": 244.0857977543
+  },
+  "low": {
+   "h": 0.1055743243243
+  }
+ },
+ "pi_power": {
+  "mid": {
+   "h": 17.07050023
+  },
+  "low": {
+   "h": 39466.666667
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.264890497372116e-13,
+  "temperature": 2.2658763754179832e-13,
+  "time": 0.0,
+  "peak": 8.614416672157567e-13,
+  "balance": 0.0,
+  "outflow": 0.0,
+  "field": 7.86418065355098e-08
+ }
+}
