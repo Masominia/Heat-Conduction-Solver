@@ -1,0 +1,88 @@
+{
+ "case": "transient_box3",
+ "title": "Step response with 3 um of buried oxide",
+ "notes": [
+  "A thicker buried oxide is more efficient and slower: the product of power and time changes little.",
+  "Reference: the same implicit Euler stepping with a sparse solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 64.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 45.6782584104,
+  "peak_x": -0.125,
+  "peak_y": 5.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 219.111002 1e-7",
+   "status": "PASS",
+   "detail": "219.11100208, expected 219.11100200, relative error 3.57e-10"
+  },
+  {
+   "check": "pi_power wg h 19.0162366 1e-7",
+   "status": "PASS",
+   "detail": "19.01623664, expected 19.01623660, relative error 2.28e-9"
+  },
+  {
+   "check": "peak 45.6782584 1e-7",
+   "status": "PASS",
+   "detail": "45.67825841, expected 45.67825840, relative error 2.27e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 2.62e-14"
+  },
+  {
+   "check": "cells 15360",
+   "status": "PASS",
+   "detail": "15360 cells (240 by 64)"
+  },
+  {
+   "check": "tau wg 12.593224 1e-6",
+   "status": "PASS",
+   "detail": "12.59322371, expected 12.59322400, relative error -2.30e-8"
+  },
+  {
+   "check": "rise wg 29.196595 1e-6",
+   "status": "PASS",
+   "detail": "29.19659492, expected 29.19659500, relative error -2.88e-9"
+  }
+ ],
+ "temperature": {
+  "wg": 21.91110020782
+ },
+ "response": {
+  "wg": {
+   "h": 219.1110020782
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 19.016236643
+  }
+ },
+ "step": {
+  "wg": {
+   "tau": 12.59322371,
+   "rise": 29.19659492
+  }
+ },
+ "against_reference": {
+  "response": 2.6643203954327407e-13,
+  "temperature": 2.663996111061339e-13,
+  "time": 1.4123902899332985e-10,
+  "peak": 8.664347494663009e-13,
+  "balance": 0.0,
+  "outflow": 1.6200374375330283e-14,
+  "field": 1.0903647233557299e-07
+ }
+}
