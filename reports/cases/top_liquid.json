@@ -1,0 +1,73 @@
+{
+ "case": "top_liquid",
+ "title": "Standard shifter with a liquid-cooled or heat-sunk top above (h = 100000 W/m2K)",
+ "notes": [
+  "Heat leaving through the top surface. For any realistic air flow it is negligible next to conduction to the substrate.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 36.0301445781,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 77.9252191378,
+  "to_surface": 22.0747808622,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 145.643319 1e-7",
+   "status": "PASS",
+   "detail": "145.64331900, expected 145.64331900, relative error 2.28e-11"
+  },
+  {
+   "check": "pi_power wg h 28.6087044 1e-7",
+   "status": "PASS",
+   "detail": "28.60870444, expected 28.60870440, relative error 1.31e-9"
+  },
+  {
+   "check": "peak 36.0301446 1e-7",
+   "status": "PASS",
+   "detail": "36.03014458, expected 36.03014460, relative error -6.07e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 5.77e-15"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 14.56433190033
+ },
+ "response": {
+  "wg": {
+   "h": 145.6433190033
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 28.608704438
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 9.327978242121786e-14,
+  "temperature": 9.342614191246452e-14,
+  "time": 0.0,
+  "peak": 4.0664258728156146e-13,
+  "balance": 0.0,
+  "outflow": 1.5191403690550941e-13,
+  "field": 1.3834972952292705e-07
+ }
+}
