@@ -1,0 +1,129 @@
+{
+ "case": "line_d2",
+ "title": "Line heater on a 2 um slab of conductivity 1.38",
+ "notes": [
+  "A narrow heater on a slab over a heat sink: the surface temperature is P / (pi k) ln coth(pi x / (4 d)), and far away it decays as exp(-pi x / (2 d)).",
+  "Reference: that closed form, within 3% (6% at the farthest probe) for a heater two cells wide."
+ ],
+ "metrics": {
+  "nx": 256.0,
+  "ny": 16.0,
+  "dx": 0.125,
+  "dy": 0.125,
+  "x0": -16.0,
+  "y0": -2.0,
+  "peak": 77.168418374,
+  "peak_x": 0.0625,
+  "peak_y": -0.0625,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response p0 h 214.29328 1e-7",
+   "status": "PASS",
+   "detail": "214.29328003, expected 214.29328000, relative error 1.56e-10"
+  },
+  {
+   "check": "response p1 h 92.4847514 1e-7",
+   "status": "PASS",
+   "detail": "92.48475135, expected 92.48475140, relative error -5.13e-10"
+  },
+  {
+   "check": "response p2 h 19.0021741 1e-7",
+   "status": "PASS",
+   "detail": "19.00217413, expected 19.00217410, relative error 1.57e-9"
+  },
+  {
+   "check": "response p3 h 3.95290287 1e-7",
+   "status": "PASS",
+   "detail": "3.95290287, expected 3.95290287, relative error 2.09e-10"
+  },
+  {
+   "check": "peak 77.1684184 1e-7",
+   "status": "PASS",
+   "detail": "77.16841837, expected 77.16841840, relative error -3.37e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 3.22e-15"
+  },
+  {
+   "check": "cells 4096",
+   "status": "PASS",
+   "detail": "4096 cells (256 by 16)"
+  },
+  {
+   "check": "response p0 h 214.483 0.03",
+   "status": "PASS",
+   "detail": "214.29328003, expected 214.48300000, relative error -8.85e-4"
+  },
+  {
+   "check": "response p1 h 92.526 0.03",
+   "status": "PASS",
+   "detail": "92.48475135, expected 92.52600000, relative error -4.46e-4"
+  },
+  {
+   "check": "response p2 h 18.9912 0.03",
+   "status": "PASS",
+   "detail": "19.00217413, expected 18.99120000, relative error 5.78e-4"
+  },
+  {
+   "check": "response p3 h 3.94574 0.06",
+   "status": "PASS",
+   "detail": "3.95290287, expected 3.94574000, relative error 1.82e-3"
+  },
+  {
+   "check": "crosstalk p3 p2 h 0.20788 0.05",
+   "status": "PASS",
+   "detail": "0.20802372, expected 0.20788000, relative error 6.91e-4"
+  }
+ ],
+ "temperature": {
+  "p0": 21.42932800333,
+  "p1": 9.248475135258,
+  "p2": 1.900217412988,
+  "p3": 0.3952902870827
+ },
+ "response": {
+  "p0": {
+   "h": 214.2932800333
+  },
+  "p1": {
+   "h": 92.48475135258
+  },
+  "p2": {
+   "h": 19.00217412988
+  },
+  "p3": {
+   "h": 3.952902870827
+  }
+ },
+ "pi_power": {
+  "p0": {
+   "h": 19.443757947
+  },
+  "p1": {
+   "h": 45.052471956
+  },
+  "p2": {
+   "h": 219.27315465
+  },
+  "p3": {
+   "h": 1054.0776748
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.1300371779332554e-13,
+  "temperature": 2.1303687528364205e-13,
+  "time": 0.0,
+  "peak": 8.194842503594751e-14,
+  "balance": 0.0,
+  "outflow": 1.0231815394945442e-14,
+  "field": 6.463334054663434e-08
+ }
+}
