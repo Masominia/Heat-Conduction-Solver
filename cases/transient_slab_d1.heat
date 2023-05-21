@@ -1,0 +1,15 @@
+# One-dimensional heating of a slab over a sink: the surface follows a series of exponentials whose slowest time constant is 4 d^2 / (pi^2 alpha).
+# Reference: the time to 63% from that series, within 3% (implicit Euler steps and a heater one cell thick).
+title Step response of a 1 um oxide slab heated over its whole surface
+grid dx=0.5 dy=0.03125
+window width=4 ymin=-1 ymax=0
+heater h xmin=-2 xmax=2 ymin=-0.03125 ymax=0 power=0.1
+probe top x=0.25 y=-0.015625
+transient heater=h dt=0.002 steps=2500
+expect response top h 178.328804 1e-7
+expect peak 17.8328804 1e-7
+expect balance 1e-9
+expect cells 256
+expect tau top 0.381762 1e-6
+expect rise top 0.98672713 1e-6
+expect tau top 0.374 0.03
