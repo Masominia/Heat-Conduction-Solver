@@ -1,0 +1,15 @@
+# The silicon core is a tiny thermal short; removing it changes the local temperature slightly.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Heater with no silicon core under it
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+expect response wg h 172.667665 1e-7
+expect pi_power wg h 24.1311346 1e-7
+expect peak 41.6509207 1e-7
+expect balance 1e-9
+expect cells 14400
