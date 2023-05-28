@@ -1,0 +1,73 @@
+{
+ "case": "shifter_offset",
+ "title": "Heater displaced 1 um sideways",
+ "notes": [
+  "A misaligned heater: the waveguide sits on the flank of the temperature profile.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.4702251959,
+  "peak_x": 1.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 160.845147 1e-7",
+   "status": "PASS",
+   "detail": "160.84514704, expected 160.84514700, relative error 2.26e-10"
+  },
+  {
+   "check": "pi_power wg h 25.904833 1e-7",
+   "status": "PASS",
+   "detail": "25.90483296, expected 25.90483300, relative error -1.48e-9"
+  },
+  {
+   "check": "peak 41.4702252 1e-7",
+   "status": "PASS",
+   "detail": "41.47022520, expected 41.47022520, relative error -9.80e-11"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.97e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 16.08451470364
+ },
+ "response": {
+  "wg": {
+   "h": 160.8451470364
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 25.904832962
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.6240293401335607e-13,
+  "temperature": 2.6240293401335607e-13,
+  "time": 0.0,
+  "peak": 8.296188193566151e-13,
+  "balance": 0.0,
+  "outflow": 2.5579538487363606e-15,
+  "field": 1.2034026617591912e-07
+ }
+}
