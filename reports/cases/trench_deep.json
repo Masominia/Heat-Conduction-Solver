@@ -1,0 +1,85 @@
+{
+ "case": "trench_deep",
+ "title": "Trench 5 um into the substrate",
+ "notes": [
+  "Cutting into silicon helps little more: the substrate is nearly isothermal already. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 44.9286926871,
+  "peak_x": 0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 194.14772 1e-7",
+   "status": "PASS",
+   "detail": "194.14772003, expected 194.14772000, relative error 1.39e-10"
+  },
+  {
+   "check": "response wg2 h1 1.44241454 1e-7",
+   "status": "PASS",
+   "detail": "1.44241454, expected 1.44241454, relative error -3.44e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 21.4613216 1e-7",
+   "status": "PASS",
+   "detail": "21.46132165, expected 21.46132160, relative error 2.22e-9"
+  },
+  {
+   "check": "peak 44.9286927 1e-7",
+   "status": "PASS",
+   "detail": "44.92869269, expected 44.92869270, relative error -2.86e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.28e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 19.4147720027,
+  "wg2": 0.1442414539504
+ },
+ "response": {
+  "wg1": {
+   "h1": 194.147720027
+  },
+  "wg2": {
+   "h1": 1.442414539504
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 21.461321648
+  },
+  "wg2": {
+   "h1": 2888.6748938
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.6584821247667526e-13,
+  "temperature": 2.65884810523547e-13,
+  "time": 0.0,
+  "peak": 7.866330748329818e-13,
+  "balance": 0.0,
+  "outflow": 4.263256414560601e-15,
+  "field": 1.1114280436412491e-07
+ }
+}
