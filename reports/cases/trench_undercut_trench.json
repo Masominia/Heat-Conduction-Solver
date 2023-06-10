@@ -1,0 +1,85 @@
+{
+ "case": "trench_undercut_trench",
+ "title": "Undercut with side trenches: a suspended shifter",
+ "notes": [
+  "A bridge of oxide held only by what lies outside this cross-section; here it connects through thin air to its surroundings, so the numbers are an upper bound on isolation. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 538.2315362091,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 5160.99226 1e-7",
+   "status": "PASS",
+   "detail": "5160.99226323, expected 5160.99226000, relative error 6.26e-10"
+  },
+  {
+   "check": "response wg2 h1 34.9242555 1e-7",
+   "status": "PASS",
+   "detail": "34.92425549, expected 34.92425550, relative error -3.08e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 0.80733829 1e-7",
+   "status": "PASS",
+   "detail": "0.80733829, expected 0.80733829, relative error -4.40e-10"
+  },
+  {
+   "check": "peak 538.231536 1e-7",
+   "status": "PASS",
+   "detail": "538.23153621, expected 538.23153600, relative error 3.89e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 4.66e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 516.0992263232,
+  "wg2": 3.492425548926
+ },
+ "response": {
+  "wg1": {
+   "h1": 5160.992263232
+  },
+  "wg2": {
+   "h1": 34.92425548926
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 0.80733828964
+  },
+  "wg2": {
+   "h1": 119.3058122
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.1202608964107026e-12,
+  "temperature": 1.1201287278292478e-12,
+  "time": 0.0,
+  "peak": 8.993872013307941e-13,
+  "balance": 0.0,
+  "outflow": 4.737898962048349e-13,
+  "field": 9.289709158459576e-08
+ }
+}
