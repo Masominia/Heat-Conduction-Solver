@@ -1,0 +1,24 @@
+# A narrow heater on a slab over a heat sink: the surface temperature is P / (pi k) ln coth(pi x / (4 d)), and far away it decays as exp(-pi x / (2 d)).
+# Reference: that closed form, within 3% (6% at the farthest probe) for a heater two cells wide.
+title Line heater on a 3 um slab of conductivity 0.2
+grid dx=0.125 dy=0.125
+window width=48 ymin=-3 ymax=0
+material slab k=0.2 c=1.6e6
+background slab
+heater h xmin=-0.125 xmax=0.125 ymin=-0.125 ymax=0 power=0.1
+probe p0 x=1.5625 y=-0.0625
+probe p1 x=3.0625 y=-0.0625
+probe p2 x=6.0625 y=-0.0625
+probe p3 x=9.0625 y=-0.0625
+expect response p0 h 1507.54248 1e-7
+expect response p1 h 649.123759 1e-7
+expect response p2 h 133.236995 1e-7
+expect response p3 h 27.696976 1e-7
+expect peak 597.005654 1e-7
+expect balance 1e-9
+expect cells 9216
+expect response p0 h 1508.13 0.03
+expect response p1 h 649.254 0.03
+expect response p2 h 133.203 0.03
+expect response p3 h 27.6748 0.06
+expect crosstalk p3 p2 h 0.20788 0.05
