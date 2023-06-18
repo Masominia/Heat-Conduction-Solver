@@ -1,0 +1,73 @@
+{
+ "case": "shifter_no_core",
+ "title": "Heater with no silicon core under it",
+ "notes": [
+  "The silicon core is a tiny thermal short; removing it changes the local temperature slightly.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.650920727,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 172.667665 1e-7",
+   "status": "PASS",
+   "detail": "172.66766532, expected 172.66766500, relative error 1.88e-9"
+  },
+  {
+   "check": "pi_power wg h 24.1311346 1e-7",
+   "status": "PASS",
+   "detail": "24.13113456, expected 24.13113460, relative error -1.52e-9"
+  },
+  {
+   "check": "peak 41.6509207 1e-7",
+   "status": "PASS",
+   "detail": "41.65092073, expected 41.65092070, relative error 6.48e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 3.96e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.26676653241
+ },
+ "response": {
+  "wg": {
+   "h": 172.6676653241
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.131134563
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 5.448377264965069e-14,
+  "temperature": 5.43191691069025e-14,
+  "time": 0.0,
+  "peak": 2.8114010641159634e-13,
+  "balance": 0.0,
+  "outflow": 1.8758328224066646e-14,
+  "field": 1.1901669917205369e-07
+ }
+}
