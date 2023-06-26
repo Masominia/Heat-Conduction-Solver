@@ -1,0 +1,73 @@
+{
+ "case": "window_sub20",
+ "title": "Standard shifter with 20 um of substrate above the sink",
+ "notes": [
+  "How much silicon is modelled below the oxide matters little: silicon conducts a hundred times better than oxide.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy. The pipeline compares the response with 10 um of substrate."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 100.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -20.0,
+  "peak": 41.5930349571,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 173.314139 1e-7",
+   "status": "PASS",
+   "detail": "173.31413880, expected 173.31413900, relative error -1.16e-9"
+  },
+  {
+   "check": "pi_power wg h 24.0411238 1e-7",
+   "status": "PASS",
+   "detail": "24.04112380, expected 24.04112380, relative error -1.14e-10"
+  },
+  {
+   "check": "peak 41.593035 1e-7",
+   "status": "PASS",
+   "detail": "41.59303496, expected 41.59303500, relative error -1.03e-9"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 3.97e-14"
+  },
+  {
+   "check": "cells 24000",
+   "status": "PASS",
+   "detail": "24000 cells (240 by 100)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.33141387984
+ },
+ "response": {
+  "wg": {
+   "h": 173.3141387984
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.041123797
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.541501867637933e-14,
+  "temperature": 1.5374021286282577e-14,
+  "time": 0.0,
+  "peak": 4.4638439355418566e-13,
+  "balance": 0.0,
+  "outflow": 5.1159076974727215e-14,
+  "field": 1.1970654560941185e-07
+ }
+}
