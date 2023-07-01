@@ -1,0 +1,20 @@
+# A metal plane above spreads the heat sideways: lower response, far more crosstalk.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Aluminium plane 1 um above the heater
+grid dx=0.25 dy=0.25
+window width=80 ymin=-10 ymax=7
+layer si -10 0
+layer sio2 0 7
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h1 xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg1 xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+rect al -40 40 5.5 6.5
+rect si 9.75 10.25 2 2.25
+probe wg2 xmin=9.75 xmax=10.25 ymin=2 ymax=2.25
+expect response wg1 h1 84.2246692 1e-7
+expect response wg2 h1 18.3014902 1e-7
+expect pi_power wg1 h1 49.4708582 1e-7
+expect peak 21.8894894 1e-7
+expect balance 1e-9
+expect cells 21760
