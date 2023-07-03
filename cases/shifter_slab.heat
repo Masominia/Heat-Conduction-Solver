@@ -1,0 +1,19 @@
+# An unetched silicon slab carries heat sideways: lower response, more crosstalk. The slab is one cell (125 nm) thick here.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Rib waveguide: a 90 nm silicon slab under the heater
+grid dx=0.125 dy=0.125
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -30 30 2 2.125
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+probe side x=10.0625 y=2.0625
+expect response wg h 94.8579784 1e-7
+expect response side h 25.9874459 1e-7
+expect pi_power wg h 43.9253159 1e-7
+expect peak 36.0758746 1e-7
+expect balance 1e-9
+expect cells 57600
