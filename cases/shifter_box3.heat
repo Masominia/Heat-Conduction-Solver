@@ -1,0 +1,16 @@
+# The buried oxide is the thermal resistance to the substrate: a thicker one makes the shifter more efficient and slower.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Buried oxide 3 um thick
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=6
+layer si -10 0
+layer sio2 0 6
+rect si -0.25 0.25 3 3.25
+rect tin -1 1 5 5.25
+heater h xmin=-1 xmax=1 ymin=5 ymax=5.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=3 ymax=3.25
+expect response wg h 219.111002 1e-7
+expect pi_power wg h 19.0162366 1e-7
+expect peak 45.6782584 1e-7
+expect balance 1e-9
+expect cells 15360
