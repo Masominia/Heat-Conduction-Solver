@@ -1,0 +1,23 @@
+# Crosstalk arrives late: the neighbour responds more slowly than the heated waveguide.
+# Reference: the same implicit Euler stepping with a sparse solver in SciPy.
+title Step response at a neighbour 6 um away
+grid dx=0.25 dy=0.25
+window width=80 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+probe next xmin=5.75 xmax=6.25 ymin=2 ymax=2.25
+transient heater=h dt=0.5 steps=500
+expect response wg h 171.845661 1e-7
+expect response next h 44.2794783 1e-7
+expect pi_power wg h 24.2465631 1e-7
+expect peak 41.4477369 1e-7
+expect balance 1e-9
+expect cells 19200
+expect tau wg 9.3100358 1e-6
+expect rise wg 20.683666 1e-6
+expect tau next 18.387751 1e-6
+expect rise next 28.235884 1e-6
