@@ -1,0 +1,114 @@
+{
+ "case": "transient_neighbour",
+ "title": "Step response at a neighbour 6 um away",
+ "notes": [
+  "Crosstalk arrives late: the neighbour responds more slowly than the heated waveguide.",
+  "Reference: the same implicit Euler stepping with a sparse solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 41.4477369401,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.845661 1e-7",
+   "status": "PASS",
+   "detail": "171.84566091, expected 171.84566100, relative error -5.40e-10"
+  },
+  {
+   "check": "response next h 44.2794783 1e-7",
+   "status": "PASS",
+   "detail": "44.27947830, expected 44.27947830, relative error -1.40e-12"
+  },
+  {
+   "check": "pi_power wg h 24.2465631 1e-7",
+   "status": "PASS",
+   "detail": "24.24656314, expected 24.24656310, relative error 1.44e-9"
+  },
+  {
+   "check": "peak 41.4477369 1e-7",
+   "status": "PASS",
+   "detail": "41.44773694, expected 41.44773690, relative error 9.67e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.01e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  },
+  {
+   "check": "tau wg 9.3100358 1e-6",
+   "status": "PASS",
+   "detail": "9.31003584, expected 9.31003580, relative error 4.32e-9"
+  },
+  {
+   "check": "rise wg 20.683666 1e-6",
+   "status": "PASS",
+   "detail": "20.68366619, expected 20.68366600, relative error 9.40e-9"
+  },
+  {
+   "check": "tau next 18.387751 1e-6",
+   "status": "PASS",
+   "detail": "18.38775123, expected 18.38775100, relative error 1.27e-8"
+  },
+  {
+   "check": "rise next 28.235884 1e-6",
+   "status": "PASS",
+   "detail": "28.23588355, expected 28.23588400, relative error -1.59e-8"
+  }
+ ],
+ "temperature": {
+  "wg": 17.18456609072,
+  "next": 4.427947829994
+ },
+ "response": {
+  "wg": {
+   "h": 171.8456609072
+  },
+  "next": {
+   "h": 44.27947829994
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.246563135
+  },
+  "next": {
+   "h": 94.099271867
+  }
+ },
+ "step": {
+  "wg": {
+   "tau": 9.31003584,
+   "rise": 20.68366619
+  },
+  "next": {
+   "tau": 18.38775123,
+   "rise": 28.23588355
+  }
+ },
+ "against_reference": {
+  "response": 7.078730747110827e-14,
+  "temperature": 7.07046120184551e-14,
+  "time": 2.1650947955146686e-10,
+  "peak": 7.354390279055124e-14,
+  "balance": 0.0,
+  "outflow": 1.1368683772161603e-15,
+  "field": 1.2024065915391209e-07
+ }
+}
