@@ -1,0 +1,85 @@
+{
+ "case": "trench_box",
+ "title": "Trench through cladding and buried oxide",
+ "notes": [
+  "Down to the substrate: the oxide path to the neighbour is cut, the substrate path remains. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 44.8381524543,
+  "peak_x": 0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 193.235287 1e-7",
+   "status": "PASS",
+   "detail": "193.23528662, expected 193.23528700, relative error -1.97e-9"
+  },
+  {
+   "check": "response wg2 h1 2.09480866 1e-7",
+   "status": "PASS",
+   "detail": "2.09480866, expected 2.09480866, relative error -2.05e-9"
+  },
+  {
+   "check": "pi_power wg1 h1 21.5626594 1e-7",
+   "status": "PASS",
+   "detail": "21.56265939, expected 21.56265940, relative error -6.61e-10"
+  },
+  {
+   "check": "peak 44.8381525 1e-7",
+   "status": "PASS",
+   "detail": "44.83815245, expected 44.83815250, relative error -1.02e-9"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.20e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 19.32352866187,
+  "wg2": 0.2094808655703
+ },
+ "response": {
+  "wg1": {
+   "h1": 193.2352866187
+  },
+  "wg2": {
+   "h1": 2.094808655703
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 21.562659386
+  },
+  "wg2": {
+   "h1": 1989.0440377
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.2592510057318103e-13,
+  "temperature": 1.2600459874273482e-13,
+  "time": 0.0,
+  "peak": 1.0856665621199842e-12,
+  "balance": 0.0,
+  "outflow": 1.1937117960769683e-14,
+  "field": 1.1150537375324297e-07
+ }
+}
