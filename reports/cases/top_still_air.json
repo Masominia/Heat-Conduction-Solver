@@ -1,0 +1,73 @@
+{
+ "case": "top_still_air",
+ "title": "Standard shifter with still air above (h = 10 W/m2K)",
+ "notes": [
+  "Heat leaving through the top surface. For any realistic air flow it is negligible next to conduction to the substrate.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 41.4471804766,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 99.9969893774,
+  "to_surface": 0.0030106226,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.843522 1e-7",
+   "status": "PASS",
+   "detail": "171.84352153, expected 171.84352200, relative error -2.72e-9"
+  },
+  {
+   "check": "pi_power wg h 24.246865 1e-7",
+   "status": "PASS",
+   "detail": "24.24686499, expected 24.24686500, relative error -2.58e-10"
+  },
+  {
+   "check": "peak 41.4471805 1e-7",
+   "status": "PASS",
+   "detail": "41.44718048, expected 41.44718050, relative error -5.65e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.35e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.18435215333
+ },
+ "response": {
+  "wg": {
+   "h": 171.8435215333
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.246864994
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 7.558458470707403e-14,
+  "temperature": 7.566728118924807e-14,
+  "time": 0.0,
+  "peak": 9.685982039988159e-14,
+  "balance": 0.0,
+  "outflow": 2.916067387559451e-13,
+  "field": 1.2050052563987182e-07
+ }
+}
