@@ -1,0 +1,88 @@
+{
+ "case": "transient_slab_d3",
+ "title": "Step response of a 3 um oxide slab heated over its whole surface",
+ "notes": [
+  "One-dimensional heating of a slab over a sink: the surface follows a series of exponentials whose slowest time constant is 4 d^2 / (pi^2 alpha).",
+  "Reference: the time to 63% from that series, within 3% (implicit Euler steps and a heater one cell thick)."
+ ],
+ "metrics": {
+  "nx": 8.0,
+  "ny": 32.0,
+  "dx": 0.5,
+  "dy": 0.09375,
+  "x0": -2.0,
+  "y0": -3.0,
+  "peak": 53.4986413043,
+  "peak_x": 1.75,
+  "peak_y": -0.0469,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response top h 534.986413 1e-7",
+   "status": "PASS",
+   "detail": "534.98641304, expected 534.98641300, relative error 8.13e-11"
+  },
+  {
+   "check": "peak 53.4986413 1e-7",
+   "status": "PASS",
+   "detail": "53.49864130, expected 53.49864130, relative error 8.13e-11"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.69e-14"
+  },
+  {
+   "check": "cells 256",
+   "status": "PASS",
+   "detail": "256 cells (8 by 32)"
+  },
+  {
+   "check": "tau top 3.435858 1e-6",
+   "status": "PASS",
+   "detail": "3.43585796, expected 3.43585800, relative error -1.14e-8"
+  },
+  {
+   "check": "rise top 8.8805441 1e-6",
+   "status": "PASS",
+   "detail": "8.88054413, expected 8.88054410, relative error 3.72e-9"
+  },
+  {
+   "check": "tau top 3.363 0.03",
+   "status": "PASS",
+   "detail": "3.43585796, expected 3.36300000, relative error 2.17e-2"
+  }
+ ],
+ "temperature": {
+  "top": 53.49864130435
+ },
+ "response": {
+  "top": {
+   "h": 534.9864130435
+  }
+ },
+ "pi_power": {
+  "top": {
+   "h": 7.7883597884
+  }
+ },
+ "step": {
+  "top": {
+   "tau": 3.43585796,
+   "rise": 8.88054413
+  }
+ },
+ "against_reference": {
+  "response": 3.995078187140205e-14,
+  "temperature": 3.997734489126335e-14,
+  "time": 3.3817901614638607e-10,
+  "peak": 9.010176336954447e-13,
+  "balance": 0.0,
+  "outflow": 0.0,
+  "field": 8.939683208905378e-08
+ }
+}
