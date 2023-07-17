@@ -1,0 +1,85 @@
+{
+ "case": "shifter_slab",
+ "title": "Rib waveguide: a 90 nm silicon slab under the heater",
+ "notes": [
+  "An unetched silicon slab carries heat sideways: lower response, more crosstalk. The slab is one cell (125 nm) thick here.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 480.0,
+  "ny": 120.0,
+  "dx": 0.125,
+  "dy": 0.125,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 36.0758746152,
+  "peak_x": 0.0625,
+  "peak_y": 4.1875,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 94.8579784 1e-7",
+   "status": "PASS",
+   "detail": "94.85797843, expected 94.85797840, relative error 3.11e-10"
+  },
+  {
+   "check": "response side h 25.9874459 1e-7",
+   "status": "PASS",
+   "detail": "25.98744593, expected 25.98744590, relative error 1.09e-9"
+  },
+  {
+   "check": "pi_power wg h 43.9253159 1e-7",
+   "status": "PASS",
+   "detail": "43.92531588, expected 43.92531590, relative error -3.56e-10"
+  },
+  {
+   "check": "peak 36.0758746 1e-7",
+   "status": "PASS",
+   "detail": "36.07587462, expected 36.07587460, relative error 4.21e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 2.48e-13"
+  },
+  {
+   "check": "cells 57600",
+   "status": "PASS",
+   "detail": "57600 cells (480 by 120)"
+  }
+ ],
+ "temperature": {
+  "wg": 9.485797842948,
+  "side": 2.598744592826
+ },
+ "response": {
+  "wg": {
+   "h": 94.85797842948
+  },
+  "side": {
+   "h": 25.98744592826
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 43.925315884
+  },
+  "side": {
+   "h": 160.33382727
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.0882023943903088e-12,
+  "temperature": 1.0883732804447041e-12,
+  "time": 0.0,
+  "peak": 1.766712077738947e-13,
+  "balance": 0.0,
+  "outflow": 5.901767963223392e-13,
+  "field": 1.380656371486542e-07
+ }
+}
