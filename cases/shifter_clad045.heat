@@ -1,0 +1,16 @@
+# Oxide above the heater stores heat but leads nowhere when the top is adiabatic.
+# Reference: the same mesh solved with a sparse direct solver in SciPy.
+title Cladding up to 4.5 um
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=4.5
+layer si -10 0
+layer sio2 0 4.5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+expect response wg h 185.522912 1e-7
+expect pi_power wg h 22.4590409 1e-7
+expect peak 45.6044302 1e-7
+expect balance 1e-9
+expect cells 13920
