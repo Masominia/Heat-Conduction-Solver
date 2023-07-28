@@ -1,0 +1,88 @@
+{
+ "case": "transient_box1",
+ "title": "Step response with 1 um of buried oxide",
+ "notes": [
+  "A thin buried oxide is fast and inefficient.",
+  "Reference: the same implicit Euler stepping with a sparse solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 56.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 36.2308432652,
+  "peak_x": 0.125,
+  "peak_y": 3.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 109.834304 1e-7",
+   "status": "PASS",
+   "detail": "109.83430444, expected 109.83430400, relative error 4.00e-9"
+  },
+  {
+   "check": "pi_power wg h 37.9359317 1e-7",
+   "status": "PASS",
+   "detail": "37.93593166, expected 37.93593170, relative error -1.16e-9"
+  },
+  {
+   "check": "peak 36.2308433 1e-7",
+   "status": "PASS",
+   "detail": "36.23084327, expected 36.23084330, relative error -9.60e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 4.13e-14"
+  },
+  {
+   "check": "cells 13440",
+   "status": "PASS",
+   "detail": "13440 cells (240 by 56)"
+  },
+  {
+   "check": "tau wg 6.3388666 1e-6",
+   "status": "PASS",
+   "detail": "6.33886656, expected 6.33886660, relative error -6.96e-9"
+  },
+  {
+   "check": "rise wg 13.547424 1e-6",
+   "status": "PASS",
+   "detail": "13.54742443, expected 13.54742400, relative error 3.19e-8"
+  }
+ ],
+ "temperature": {
+  "wg": 10.98343044391
+ },
+ "response": {
+  "wg": {
+   "h": 109.8343044391
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 37.935931656
+  }
+ },
+ "step": {
+  "wg": {
+   "tau": 6.33886656,
+   "rise": 13.54742443
+  }
+ },
+ "against_reference": {
+  "response": 1.764804350564242e-13,
+  "temperature": 1.764480889356294e-13,
+  "time": 6.517867597458135e-10,
+  "peak": 5.112729225115397e-13,
+  "balance": 0.0,
+  "outflow": 4.263256414560601e-15,
+  "field": 1.378225640784469e-07
+ }
+}
