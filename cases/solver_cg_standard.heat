@@ -1,0 +1,17 @@
+# The same system solved by preconditioned conjugate gradients, not by factorisation.
+# Reference: the sparse direct solution; the two solvers must agree to 1e-7.
+title Conjugate gradients: standard
+grid dx=0.25 dy=0.25
+window width=60 ymin=-10 ymax=5
+layer si -10 0
+layer sio2 0 5
+rect si -0.25 0.25 2 2.25
+rect tin -1 1 4 4.25
+heater h xmin=-1 xmax=1 ymin=4 ymax=4.25 power=0.1
+probe wg xmin=-0.25 xmax=0.25 ymin=2 ymax=2.25
+solver cg
+expect response wg h 171.846908 1e-7
+expect pi_power wg h 24.2463872 1e-7
+expect peak 41.4478746 1e-7
+expect balance 1e-9
+expect cells 14400
