@@ -1,0 +1,85 @@
+{
+ "case": "metal_line",
+ "title": "Aluminium routing line beside the heater",
+ "notes": [
+  "A wire passing 3 um away draws a little heat towards itself.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 40.0349240542,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 163.963685 1e-7",
+   "status": "PASS",
+   "detail": "163.96368520, expected 163.96368500, relative error 1.25e-9"
+  },
+  {
+   "check": "response wg2 h1 18.8994161 1e-7",
+   "status": "PASS",
+   "detail": "18.89941605, expected 18.89941610, relative error -2.55e-9"
+  },
+  {
+   "check": "pi_power wg1 h1 25.4121311 1e-7",
+   "status": "PASS",
+   "detail": "25.41213112, expected 25.41213110, relative error 6.26e-10"
+  },
+  {
+   "check": "peak 40.0349241 1e-7",
+   "status": "PASS",
+   "detail": "40.03492405, expected 40.03492410, relative error -1.14e-9"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.24e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 16.39636852046,
+  "wg2": 1.889941605176
+ },
+ "response": {
+  "wg1": {
+   "h1": 163.9636852046
+  },
+  "wg2": {
+   "h1": 18.89941605176
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 25.412131116
+  },
+  "wg2": {
+   "h1": 220.46536545
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.9084898002769992e-13,
+  "temperature": 1.9089231540009495e-13,
+  "time": 0.0,
+  "peak": 4.62337289349753e-13,
+  "balance": 0.0,
+  "outflow": 1.7621459846850484e-14,
+  "field": 1.2488031636348714e-07
+ }
+}
