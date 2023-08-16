@@ -1,0 +1,73 @@
+{
+ "case": "shifter_box4",
+ "title": "Buried oxide 4 um thick",
+ "notes": [
+  "The buried oxide is the thermal resistance to the substrate: a thicker one makes the shifter more efficient and slower.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 68.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 49.2416814659,
+  "peak_x": 0.125,
+  "peak_y": 6.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 257.627743 1e-7",
+   "status": "PASS",
+   "detail": "257.62774321, expected 257.62774300, relative error 8.29e-10"
+  },
+  {
+   "check": "pi_power wg h 16.1732064 1e-7",
+   "status": "PASS",
+   "detail": "16.17320641, expected 16.17320640, relative error 3.13e-10"
+  },
+  {
+   "check": "peak 49.2416815 1e-7",
+   "status": "PASS",
+   "detail": "49.24168147, expected 49.24168150, relative error -6.93e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 4.44e-16"
+  },
+  {
+   "check": "cells 16320",
+   "status": "PASS",
+   "detail": "16320 cells (240 by 68)"
+  }
+ ],
+ "temperature": {
+  "wg": 25.76277432137
+ },
+ "response": {
+  "wg": {
+   "h": 257.6277432137
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 16.173206405
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 1.8533901375471303e-14,
+  "temperature": 1.8340839902810138e-14,
+  "time": 0.0,
+  "peak": 7.223508274551605e-13,
+  "balance": 0.0,
+  "outflow": 1.7621459846850484e-14,
+  "field": 1.0144838509726104e-07
+ }
+}
