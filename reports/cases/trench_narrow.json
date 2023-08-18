@@ -1,0 +1,85 @@
+{
+ "case": "trench_narrow",
+ "title": "Trenches 2.5 um from the heater on both sides",
+ "notes": [
+  "Closer trenches confine more. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 62.9321817607,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 306.268845 1e-7",
+   "status": "PASS",
+   "detail": "306.26884544, expected 306.26884500, relative error 1.43e-9"
+  },
+  {
+   "check": "response wg2 h1 2.50833876 1e-7",
+   "status": "PASS",
+   "detail": "2.50833876, expected 2.50833876, relative error -1.15e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 13.604605 1e-7",
+   "status": "PASS",
+   "detail": "13.60460500, expected 13.60460500, relative error 1.60e-10"
+  },
+  {
+   "check": "peak 62.9321818 1e-7",
+   "status": "PASS",
+   "detail": "62.93218176, expected 62.93218180, relative error -6.24e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 8.00e-14"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg1": 30.62688454387,
+  "wg2": 0.2508338759712
+ },
+ "response": {
+  "wg1": {
+   "h1": 306.2688454387
+  },
+  "wg2": {
+   "h1": 2.508338759712
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 13.604605002
+  },
+  "wg2": {
+   "h1": 1661.1259745
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.4313566272466622e-14,
+  "temperature": 2.43599662081011e-14,
+  "time": 0.0,
+  "peak": 1.35374416767522e-13,
+  "balance": 0.0,
+  "outflow": 3.069544618483633e-14,
+  "field": 7.93614449936032e-08
+ }
+}
