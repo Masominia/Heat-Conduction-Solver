@@ -1,0 +1,73 @@
+{
+ "case": "shifter_aluminium",
+ "title": "Aluminium heater",
+ "notes": [
+  "The heater metal hardly matters: its own resistance to heat flow is negligible next to the oxide.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 40.7864241778,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 171.47609 1e-7",
+   "status": "PASS",
+   "detail": "171.47609028, expected 171.47609000, relative error 1.62e-9"
+  },
+  {
+   "check": "pi_power wg h 24.2988201 1e-7",
+   "status": "PASS",
+   "detail": "24.29882009, expected 24.29882010, relative error -5.86e-10"
+  },
+  {
+   "check": "peak 40.7864242 1e-7",
+   "status": "PASS",
+   "detail": "40.78642418, expected 40.78642420, relative error -5.43e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.16e-13"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 17.14760902777
+ },
+ "response": {
+  "wg": {
+   "h": 171.4760902777
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 24.298820086
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 8.353666992130905e-14,
+  "temperature": 8.34952330810703e-14,
+  "time": 0.0,
+  "peak": 1.2081504990507197e-12,
+  "balance": 0.0,
+  "outflow": 4.305888978706207e-14,
+  "field": 1.2231270636370892e-07
+ }
+}
