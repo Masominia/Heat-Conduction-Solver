@@ -1,0 +1,73 @@
+{
+ "case": "shifter_gap125",
+ "title": "Heater 1.25 um above the waveguide",
+ "notes": [
+  "The closer the heater, the larger the response, at the price of optical loss in a real device.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 240.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -30.0,
+  "y0": -10.0,
+  "peak": 36.5891348398,
+  "peak_x": 0.125,
+  "peak_y": 3.625,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg h 184.14705 1e-7",
+   "status": "PASS",
+   "detail": "184.14705015, expected 184.14705000, relative error 8.35e-10"
+  },
+  {
+   "check": "pi_power wg h 22.6268445 1e-7",
+   "status": "PASS",
+   "detail": "22.62684449, expected 22.62684450, relative error -5.52e-10"
+  },
+  {
+   "check": "peak 36.5891348 1e-7",
+   "status": "PASS",
+   "detail": "36.58913484, expected 36.58913480, relative error 1.09e-9"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 5.30e-14"
+  },
+  {
+   "check": "cells 14400",
+   "status": "PASS",
+   "detail": "14400 cells (240 by 60)"
+  }
+ ],
+ "temperature": {
+  "wg": 18.41470501538
+ },
+ "response": {
+  "wg": {
+   "h": 184.1470501538
+  }
+ },
+ "pi_power": {
+  "wg": {
+   "h": 22.626844488
+  }
+ },
+ "step": {},
+ "against_reference": {
+  "response": 2.887747498526693e-13,
+  "temperature": 2.8881333546863033e-13,
+  "time": 0.0,
+  "peak": 4.447065698644016e-13,
+  "balance": 0.0,
+  "outflow": 9.947598300641402e-15,
+  "field": 1.3623209971324906e-07
+ }
+}
