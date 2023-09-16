@@ -1,0 +1,114 @@
+{
+ "case": "trench_none",
+ "title": "No trench: the reference for this family",
+ "notes": [
+  "Two waveguides 10 um apart with nothing between them. Neighbour at 10 um.",
+  "Reference: the same mesh solved with a sparse direct solver in SciPy."
+ ],
+ "metrics": {
+  "nx": 320.0,
+  "ny": 60.0,
+  "dx": 0.25,
+  "dy": 0.25,
+  "x0": -40.0,
+  "y0": -10.0,
+  "peak": 41.4465891048,
+  "peak_x": -0.125,
+  "peak_y": 4.125,
+  "injected": 100.0,
+  "to_sink": 100.0,
+  "to_surface": 0.0,
+  "iterations": 0.0
+ },
+ "checks": [
+  {
+   "check": "response wg1 h1 171.838116 1e-7",
+   "status": "PASS",
+   "detail": "171.83811582, expected 171.83811600, relative error -1.07e-9"
+  },
+  {
+   "check": "response wg2 h1 13.4208258 1e-7",
+   "status": "PASS",
+   "detail": "13.42082581, expected 13.42082580, relative error 9.96e-10"
+  },
+  {
+   "check": "pi_power wg1 h1 24.2476278 1e-7",
+   "status": "PASS",
+   "detail": "24.24762776, expected 24.24762780, relative error -1.80e-9"
+  },
+  {
+   "check": "peak 41.4465891 1e-7",
+   "status": "PASS",
+   "detail": "41.44658910, expected 41.44658910, relative error 1.15e-10"
+  },
+  {
+   "check": "balance 1e-9",
+   "status": "PASS",
+   "detail": "100.000000 W/m in, 100.000000 W/m out, relative difference 1.01e-13"
+  },
+  {
+   "check": "cells 19200",
+   "status": "PASS",
+   "detail": "19200 cells (320 by 60)"
+  },
+  {
+   "check": "tau wg1 9.6047019 1e-6",
+   "status": "PASS",
+   "detail": "9.60470188, expected 9.60470190, relative error -2.56e-9"
+  },
+  {
+   "check": "rise wg1 21.277831 1e-6",
+   "status": "PASS",
+   "detail": "21.27783142, expected 21.27783100, relative error 1.96e-8"
+  },
+  {
+   "check": "tau wg2 26.671872 1e-6",
+   "status": "PASS",
+   "detail": "26.67187227, expected 26.67187200, relative error 1.02e-8"
+  },
+  {
+   "check": "rise wg2 34.653735 1e-6",
+   "status": "PASS",
+   "detail": "34.65373460, expected 34.65373500, relative error -1.16e-8"
+  }
+ ],
+ "temperature": {
+  "wg1": 17.18381158163,
+  "wg2": 1.342082581337
+ },
+ "response": {
+  "wg1": {
+   "h1": 171.8381158163
+  },
+  "wg2": {
+   "h1": 13.42082581337
+  }
+ },
+ "pi_power": {
+  "wg1": {
+   "h1": 24.247627756
+  },
+  "wg2": {
+   "h1": 310.46276322
+  }
+ },
+ "step": {
+  "wg1": {
+   "tau": 9.60470188,
+   "rise": 21.27783142
+  },
+  "wg2": {
+   "tau": 26.67187227,
+   "rise": 34.6537346
+  }
+ },
+ "against_reference": {
+  "response": 2.566979556685265e-13,
+  "temperature": 2.5678065475218257e-13,
+  "time": 4.733946497701875e-10,
+  "peak": 7.644320382421485e-13,
+  "balance": 0.0,
+  "outflow": 5.684341886080802e-16,
+  "field": 1.2045772568152564e-07
+ }
+}
